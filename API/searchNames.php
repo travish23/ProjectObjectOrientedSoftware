@@ -55,7 +55,6 @@
 	sendInfo($searchResults);
 	return;
 	
-	__________________________________________________________________________________
 	
 
 	// sends a json to what called this script
