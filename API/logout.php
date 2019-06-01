@@ -3,6 +3,6 @@
 	$_SESSION = array();
 	if(session_destroy()) 
 	{
-		header("Location: login.html");
+		header("Location: index.html");
 	}
 ?>
