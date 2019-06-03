@@ -8,7 +8,7 @@
    <body>
       <h1 id="mainTitle">Calling All Gamers&trade;</h1>
       <div id="loginBox">
-         <form class="myForm">
+         <form class="myForm" onsubmit="loginFunction()">
             <div class="formGroup">
                <label for="username">Username</label>
                <input type="text" name="username" id="username" placeholder="Enter username">
@@ -18,13 +18,13 @@
                <input type="password" name="password" id="password" placeholder="Enter password">
             </div>
             <div id="btnContainer">
-               <input type="submit" class="button" value="Login">
+               <input type="submit" class="button" name="login" value="Login">
                <p>or</p>
-               <button type="button" class="button" name="newAccount">Create New Account</button>
+               <input type="submit" class="button" name="newAccount" value="Create New Account">
                <a href="#" id="forgotPass">I forgot my password</a>
             </div>
          </form>
       </div> <!-- Login Box -->
-      <a class="button" href="userContactsPage.html">to contacts page</a> <!-- dev button -->
+      <a href="userContactsPage.html">to contacts page</a> <!-- dev button -->
    </body>
 </html>

@@ -1,10 +1,82 @@
+<!--	Create Account			x
+ 		Log in					x
+		Log out					x
+		Edit
+			Add Contacts
+			Delete Contacts
+		Search
+-->
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Contacts</title>
+		<link rel="stylesheet" type="text/css" href="style/userContactsPage.css">
+		<script type="text/javascript" src="js/code.js"></script>
 	</head>
 	<body>
-		Contacts:)
-		<a class="button" href="index.html">login page</a>
+
+		<h1 id="contactsTitle">Contacts</h1>
+
+		<div id="contactBox">
+
+			<!-- SEARCH -->
+
+			<button type="button" class="button" id="searchBtn" onclick="showSearchForm();">Search</button>
+
+			<form class="myForm" id="searchForm" onsubmit="search();" style="display:none; visibility:hidden;">
+				<div class="formGroup">
+					<input type="text" placeholder="Search.." name="search">
+					<div id="btnContainer">
+	               <input type="submit" class="button" name="search" value="Search">
+						<input type="button" class="button2" id="cancelSearchBtn" onclick="cancelSearch();" value="Cancel">
+	            </div>
+				</div>
+			</form>
+
+			<!-- ADD -->
+
+			<button type="button" class="button" id="addContactBtn" onclick="showContactForm();">Add</button>
+
+			<form class="myForm" id="contactForm" onsubmit="addContact();" style="display:none; visibility:hidden;">
+				<div class="formGroup">
+               <label for="name">First name</label>
+               <input type="text" name="firstName" id="firstName" placeholder="first name" required>
+            </div>
+            <div class="formGroup">
+               <label for="lastName">Last name</label>
+               <input type="text" name="lastName" id="lastName" placeholder="last name" required>
+            </div>
+				<div class="formGroup">
+               <label for="email">Email</label>
+               <input type="email" name="email" id="email" placeholder="example@domain.com" required>
+            </div>
+				<div class="formGroup">
+               <label for="phone">Phone</label>
+               <input type="tel" name="phone" id="phone" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            </div>
+				<div class="formGroup">
+               <label for="address">Address</label>
+               <input type="text" name="street" class="address" placeholder="Street" required>
+					<input type="text" name="city" class="address" placeholder="City" required>
+					<input type="text" name="state" class="address" placeholder="State" required>
+					<input type="text" name="zipCode" class="address" placeholder="ZIP Code" required>
+            </div>
+            <div id="btnContainer">
+               <input type="submit" class="button" name="addContact" value="Add Contact">
+					<input type="button" class="button2" id="cancelAddContactBtn" onclick="cancelAddContact();" value="Cancel">
+            </div>
+			</form>
+
+			<!-- DELETE -->
+
+			<button type="button" class="button" id="deleteContactBtn" onclick="deleteContact();">Delete</button>
+
+			<!-- LOGOUT -->
+
+			<button type="button" class="button" id="logoutBtn" onclick="logout();">Log Out</button>
+		</div>
+		<div id="accessUIDiv">
+		</div>
+		<a href="index.html">login page</a>
 	</body>
 </html>
