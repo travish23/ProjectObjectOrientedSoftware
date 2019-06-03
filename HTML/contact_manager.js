@@ -30,10 +30,24 @@ sendUsernameAndPassword(){
 	request_object.send(json_payload);
 	
 	//creates an object to get information back
-	var response_object = JSON.parse(request_object.response)
+	var response_object = JSON.parse(request_object.response);
 	
 	//updates the current user variable to the person who just logged in
 	current_user_ID = response_object.ID;
+}
+
+
+sendLogoutRequest(){
+	
+	//creates a new XML HTTP Request Object
+	var request_object = new XMLHttpRequest();
+	
+	//sets that object to go to logout.php
+	var url = urlBase + 'logout.' + extension;
+	request_object.open("GET", url);
+	
+	//sets current user to 0
+	current_user_ID = 0;
 }
 
 // sends the contact information a user inputs to the server
@@ -57,7 +71,7 @@ addContact(){
 		};
 	
 	//converts that object into  JSON object
-	var json_payload = JSON.stringify(payload)
+	var json_payload = JSON.stringify(payload);
 	
 	//creates the XML HTTP Request object
 	var request_object = new XMLHttpRequest();
@@ -99,3 +113,4 @@ sendSearchRequest(){
 	
 	
 }
+
