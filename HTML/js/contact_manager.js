@@ -38,10 +38,19 @@ sendUsernameAndPassword(){
 	//creates an object to get information back
 	var response_object = JSON.parse(request_object.response);
 	
-	//updates the current user variable to the person who just logged in
-	current_user_ID = response_object.ID;
-	
-	//TODO: send user to page with contacts
+	if(response_object.state == 1){
+		//updates the current user variable to the person who just logged in
+		current_user_ID = response_object.user_ID;
+		
+		window.location.replace("http://www.contactmanager.site/userContactsPage.html");
+			
+		
+	}
+	else{
+		document.getElementById("failMessage").style.visibility = "visible";
+		document.getElementById("failMessage").style.dislplay = "inline";
+		
+	}
 }
 
 //sends request to create new account with username and password. Displays failure or success
@@ -72,7 +81,13 @@ sendCreateNewAccountRequest(){
 	//creates an object to get information back
 	var response_object = JSON.parse(request_object.response);
 	
+	
 	//TODO: figure out what to do with the information we get back
+	
+	
+	
+	
+
 	
 }
 
@@ -90,6 +105,8 @@ sendLogoutRequest(){
 	current_user_ID = 0;
 	
 	//TODO: send user back to login page
+	
+	window.location.replace("http://contactmanager.site/index.html");
 }
 
 // sends the contact information a user inputs to the server, and displays updated table
@@ -104,7 +121,7 @@ sendAddContactRequest(){
 	
 	// creates an object, and stores the values given into it
 	var payload = {
-		operation: "add"
+		operation: "add",
 		first_name: first_name, 
 		last_name: last_name, 
 		address: address,
@@ -153,7 +170,7 @@ sendSearchRequest(){
 	
 	//creates an object with that value
 	var payload = { 
-		ID: userID
+		ID: userID,
 		search: search_input
 	};
 	
