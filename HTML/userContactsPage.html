@@ -8,75 +8,248 @@
 -->
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<title>Contacts</title>
+
 		<link rel="stylesheet" type="text/css" href="style/userContactsPage.css">
-		<script type="text/javascript" src="js/userContactsPage.js"></script>
+		<script type="text/javascript" src="js/userContactsPage.js" defer></script>
+		<script type="text/javascript" src="js/contact_manager.js"></script>
+
 	</head>
 	<body>
 
 		<h1 id="contactsTitle">Contacts</h1>
 
-		<div id="contactBox">
+		<div id="userInterfaceDiv">
 
-			<!-- SEARCH -->
+			<div id="contactButtonsBox">
 
-			<button type="button" class="button" id="searchBtn" onclick="showSearchForm();">Search</button>
+				<!-- SEARCH BUTTON -->
 
-			<form class="myForm" id="searchForm" onsubmit="search();" style="display:none; visibility:hidden;">
-				<div class="formGroup">
-					<input type="text" placeholder="Search.." name="search">
-					<div id="btnContainer">
-	               <input type="submit" class="button" name="search" value="Search">
-						<input type="button" class="button2" id="cancelSearchBtn" onclick="cancelSearch();" value="Cancel">
-	            </div>
-				</div>
-			</form>
+				<button type="button" class="button" id="searchBtn" onclick="showSearchForm();">Search</button>
 
-			<!-- ADD -->
+				<!-- ADD BUTTON -->
 
-			<button type="button" class="button" id="addContactBtn" onclick="showContactForm();">Add</button>
+				<button type="button" class="button" id="addContactBtn" onclick="showContactForm();">Add</button>
 
-			<form class="myForm" id="contactForm" onsubmit="addContact();" style="display:none; visibility:hidden;">
-				<div class="formGroup">
-               <label for="name">First name</label>
-               <input type="text" name="firstName" id="firstName" placeholder="first name" required>
-            </div>
-            <div class="formGroup">
-               <label for="lastName">Last name</label>
-               <input type="text" name="lastName" id="lastName" placeholder="last name" required>
-            </div>
-				<div class="formGroup">
-               <label for="email">Email</label>
-               <input type="email" name="email" id="email" placeholder="example@domain.com" required>
-            </div>
-				<div class="formGroup">
-               <label for="phone">Phone</label>
-               <input type="tel" name="phone" id="phone" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-            </div>
-				<div class="formGroup">
-               <label for="address">Address</label>
-               <input type="text" name="street" class="address" placeholder="Street" required>
-					<input type="text" name="city" class="address" placeholder="City" required>
-					<input type="text" name="state" class="address" placeholder="State" required>
-					<input type="text" name="zipCode" class="address" placeholder="ZIP Code" required>
-            </div>
-            <div id="btnContainer">
-               <input type="submit" class="button" name="addContact" value="Add Contact">
-					<input type="button" class="button2" id="cancelAddContactBtn" onclick="cancelAddContact();" value="Cancel">
-            </div>
-			</form>
+				<!-- DELETE BUTTON-->
 
-			<!-- DELETE -->
+				<button type="button" class="button" id="deleteContactBtn" onclick="showDeleteForm();">Delete</button>
 
-			<button type="button" class="button" id="deleteContactBtn" onclick="deleteContact();">Delete</button>
+				<!-- EDIT BUTTON -->
 
-			<!-- LOGOUT -->
+				<button type="button" class="button" id="editContactBtn" onclick="showEditForm();">Edit</button>
 
-			<button type="button" class="button" id="logoutBtn" onclick="logout();">Log Out</button>
-		</div>
-		<div id="accessUIDiv">
-		</div>
+				<!-- LOGOUT BUTTON -->
+
+				<button type="button" class="button" id="logoutBtn" onclick="sendLogoutRequest();">Log Out</button>
+
+			</div> <!-- End contactButtonsBox -->
+
+			<div id="contactsBox">
+
+				<div id="formsDiv" style="display:none; visibility:hidden;">
+
+					<!-- SEARCH FORM -->
+
+					<form class="myForm" id="searchForm" onsubmit="sendSearchRequest();" style="display:none; visibility:hidden;">
+
+						<div class="formGroup">
+							<input type="text" placeholder="Search contacts..." name="search">
+
+							<div class="btnContainer">
+			               <input type="submit" class="button" name="search" value="Search">
+								<input type="button" class="button2" id="cancelSearchBtn" onclick="cancelSearch();" value="Cancel">
+			            </div>
+						</div>
+
+					</form>
+
+					<!-- ADD CONTACT FORM -->
+
+					<form class="myForm" id="contactForm" onsubmit="addContact();" style="display:none; visibility:hidden;">
+
+						<div class="formGroup">
+		               <label for="name">First name</label>
+		               <input type="text" name="firstName" id="firstName" placeholder="first name" required>
+		            </div>
+
+		            <div class="formGroup">
+		               <label for="lastName">Last name</label>
+		               <input type="text" name="lastName" id="lastName" placeholder="last name" required>
+		            </div>
+
+						<div class="formGroup">
+		               <label for="email">Email</label>
+		               <input type="email" name="email" id="email" placeholder="example@domain.com" required>
+		            </div>
+
+						<div class="formGroup">
+		               <label for="phone">Phone</label>
+		               <input type="tel" name="phone" id="phone" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+		            </div>
+
+						<div class="formGroup">
+		               <label for="address">Address</label>
+		               <input type="text" name="street" class="address" placeholder="Street" required>
+							<input type="text" name="city" class="address" placeholder="City" required>
+							<input type="text" name="state" class="address" placeholder="State" required>
+							<input type="text" name="zipCode" class="address" placeholder="ZIP Code" required>
+		            </div>
+
+		            <div class="btnContainer">
+		               <input type="submit" class="button" name="addContact" value="Add Contact">
+							<input type="button" class="button2" id="cancelAddContactBtn" onclick="cancelAddContact();" value="Cancel">
+		            </div>
+
+					</form>
+
+					<!-- DELETE FORM -->
+
+					<form class="myForm" id="deleteForm" onsubmit="sendDeleteRequest();" style="display:none; visibility:hidden;">
+
+						<p>Please select the contact(s) to be deleted.</p>
+
+						<div class="btnContainer">
+							<input type="submit" class="button" name="deleteContact" value="Delete Selection">
+							<input type="button" class="button2" id="cancelDeleteContactBtn" onclick="cancelDeleteContact();" value="Cancel">
+						</div>
+
+					</form>
+
+					<!-- EDIT FORM -->
+
+					<form class="myForm" id="editForm" onsubmit="sendEditRequest();" style="display:none; visibility:hidden;">
+
+						<p>Please select the contact to be edited.</p>
+
+						<div class="btnContainer">
+							<input type="submit" class="button" name="editContact" value="Edit Selection">
+							<input type="button" class="button2" id="cancelEditContactBtn" onclick="cancelEditContact();" value="Cancel">
+						</div>
+
+					</form>
+
+				</div> <!-- End formsDiv -->
+
+				<div id="contactsDisplay">
+					<table id="contactTable">
+					  <tr id="firstRow">
+					    <th name="lastname">Last Name</th>
+					    <th name="firstname">First Name</th>
+					    <th name="email">Email</th>
+						 <th name="phone">Phone Number</th>
+						 <th name="address">Address</th>
+					  </tr>
+					  <tr>
+						  <td name="lastname">Lastname</td>
+						  <td name="firstname">Firstname</td>
+						  <td name="email">someone@gmail.com</td>
+						  <td name="phone">123-456-7890</td>
+						  <td name="address">12345 Street Name Dr, Orlando FL 32816</td>
+					  </tr>
+					  <tr>
+						  <td name="lastname">Lastname</td>
+						  <td name="firstname">Firstname</td>
+						  <td name="email">someone@gmail.com</td>
+						  <td name="phone">123-456-7890</td>
+						  <td name="address">12345 Street Name Dr, Orlando FL 32816</td>
+					  </tr>
+					  <tr>
+						  <td name="lastname">Lastname</td>
+						  <td name="firstname">Firstname</td>
+						  <td name="email">someone@gmail.com</td>
+						  <td name="phone">123-456-7890</td>
+						  <td name="address">12345 Street Name Dr, Orlando FL 32816</td>
+					  </tr>
+					  <tr>
+						  <td name="lastname">Lastname</td>
+						  <td name="firstname">Firstname</td>
+						  <td name="email">someone@gmail.com</td>
+						  <td name="phone">123-456-7890</td>
+						  <td name="address">12345 Street Name Dr, Orlando FL 32816</td>
+					  </tr>
+					  <tr>
+						  <td name="lastname">asdfasdfasdfasdfsadfasdfsda</td>
+						  <td name="firstname">asdfasdfasdfasdfsadfasdfsda</td>
+						  <td name="email">asdfasdfasdfasdfsadfasdfsda</td>
+						  <td name="phone">asdfasdfasdfasdfsadfasdfsda</td>
+						  <td name="address">asdfasdfasdfasdfsadfasdfsdaasdfasdfasdfasdfsadfasdfsda</td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					  <tr id="blankRow">
+						  <td name="lastname"></td>
+						  <td name="firstname"></td>
+						  <td name="email"></td>
+						  <td name="phone"></td>
+						  <td name="address"></td>
+					  </tr>
+					</table>
+
+				</div> <!-- End contactsDisplay -->
+
+			</div> <!-- End contactsBox -->
+
+		</div> <!-- End userInterfaceDiv -->
+
 		<a href="index.html">login page</a>
+
 	</body>
+
 </html>
