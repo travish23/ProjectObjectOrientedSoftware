@@ -86,9 +86,18 @@ sendCreateNewAccountRequest(){
 	
 	
 	
+	if(response_object.complete == 0){
+		document.getElementById("failMessage").style.visibility = "visible";
+		document.getElementById("failMessage").style.dislplay = "inline";
+		
+	}
 	
-
-	
+	if(response_object.complete == 1){
+		current_user_ID = response_object.user_ID;
+		
+		window.location.replace("http://www.contactmanager.site/userContactsPage.html");
+		
+	}
 }
 
 //sends request for server to logout
@@ -113,11 +122,17 @@ sendLogoutRequest(){
 sendAddContactRequest(){
 	
 	// gets the contact information given by user and stores them in variables.
-	var first_name = getElementById("FirstName").value;
-	var last_name = getElementById("LastName").value;
-	var address = getElementById("Address").value;
-	var phone_number = getElementById("PhoneNumber").value;
-	var email = getElementById("Email").value;
+	var first_name = getElementById("firstName").value;
+	var last_name = getElementById("lastName").value;	
+	var phone_number = getElementById("phone").value;
+	var email = getElementById("email").value;
+	
+	var street = getElementById("street").value;
+	var city = getElementById("city").value;
+	var state = getElementById("state").value;
+	var zip = getElementById("zip").value;
+	
+	var address = street + " " + city + "," + state + " " + zip;
 	
 	// creates an object, and stores the values given into it
 	var payload = {
@@ -144,6 +159,8 @@ sendAddContactRequest(){
 	request_object.send(json_payload);
 	
 	//TODO: display updated contact list
+	
+	
 }
 
 //sends request to delete a specific contact and displays updated table
@@ -190,3 +207,4 @@ sendSearchRequest(){
 	//TODO: Display results of the search
 	
 }
+
