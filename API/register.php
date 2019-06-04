@@ -7,16 +7,7 @@
 	{
 		$username = $_POST['username'];
 		$password = $_POST['password']; 
-		$authpassword = $_POST['password_confirm'];
-		
-		if($password != $authpassword)
-		{
-			echo "<script>";
-			echo 'alert("Passwords do not match");';
-			echo 'location = "index.html"';
-			echo "</script>";
-			exit();
-		}
+		//$authpassword = $_POST['password_confirm'];
 		
 		$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 		
