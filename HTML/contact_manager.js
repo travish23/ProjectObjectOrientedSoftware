@@ -3,7 +3,13 @@ var extension = "php";
 
 var current_user_ID = 0;
 
-//sends the username and password to the server
+//TODO: Coordinate the variable names in this file to the variable names in other files
+//so the program actually works
+
+//TODO: Create a display function to display the 2D arrays given as a table of contacts
+// and use that function where needed
+
+//sends the username and password to the server for login
 sendUsernameAndPassword(){
 	
 	//gets the elements given by the user and store them in variables
@@ -34,9 +40,43 @@ sendUsernameAndPassword(){
 	
 	//updates the current user variable to the person who just logged in
 	current_user_ID = response_object.ID;
+	
+	//TODO: send user to page with contacts
 }
 
+//sends request to create new account with username and password. Displays failure or success
+sendCreateNewAccountRequest(){
+	//gets the elements given by the user and store them in variables
+	var name = getElementById("username").value;
+	var user_password = getElementById("password").value;
+	
+	//creates an object out of those variables
+	var payload = {
+		username: name, 
+		psw: user_password
+		};
+		
+	//turns that object into a JSON object
+	var json_payload = JSON.stringify(payload);
+	
+	//create the XML HTTP Request object
+	var request_object = new XMLHttpRequest();
+	
+	//Set the XML HTTP Request Object to send stuff to the newAccount.php file
+	var url = urlBase + '/newAccount.' + extension;
+	request_object.open("POST", url);
+	
+	//send the username and password to the newAccount.php file
+	request_object.send(json_payload);
+	
+	//creates an object to get information back
+	var response_object = JSON.parse(request_object.response);
+	
+	//TODO: figure out what to do with the information we get back
+	
+}
 
+//sends request for server to logout
 sendLogoutRequest(){
 	
 	//creates a new XML HTTP Request Object
@@ -48,10 +88,12 @@ sendLogoutRequest(){
 	
 	//sets current user to 0
 	current_user_ID = 0;
+	
+	//TODO: send user back to login page
 }
 
-// sends the contact information a user inputs to the server
-addContact(){
+// sends the contact information a user inputs to the server, and displays updated table
+sendAddContactRequest(){
 	
 	// gets the contact information given by user and stores them in variables.
 	var first_name = getElementById("FirstName").value;
@@ -83,8 +125,26 @@ addContact(){
 	
 	//send the contact information to the addContact.php file
 	request_object.send(json_payload);
+	
+	//TODO: display updated contact list
 }
 
+//sends request to delete a specific contact and displays updated table
+sendDeleteRequest(){
+	//TODO: figure out how to get contact ID from table
+	//TODO: send an XML HTTP request with that contact ID
+	//TODO: display updated contact list
+}
+
+//sends a request to edit a specific contact and displays updated table
+sendEditRequest(){
+	//TODO: figure out how to get contact ID from table
+	//TODO: send an XML HTTP request with that contact ID and the contact info
+	//TODO: display updated contact list
+	
+}
+
+//sends request for server to search for the name in the search field
 sendSearchRequest(){
 	
 	//sets a variable to the search field
@@ -92,7 +152,7 @@ sendSearchRequest(){
 	var userID = current_user_ID;
 	
 	//creates an object with that value
-	var payload = {
+	var payload = { 
 		ID: userID
 		search: search_input
 	};
@@ -110,7 +170,6 @@ sendSearchRequest(){
 	//sends a request with
 	request_object.send(json_payload);
 	
-	
+	//TODO: Display results of the search
 	
 }
-
