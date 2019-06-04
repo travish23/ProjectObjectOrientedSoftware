@@ -1,5 +1,5 @@
 <?php
-	include("config.php");
+	
 	session_start();
 	$_SESSION = array();
 	$obj = json_decode(file_get_contents('php://input'), true);
