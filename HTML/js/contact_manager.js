@@ -29,7 +29,7 @@ sendUsernameAndPassword(){
 	var request_object = new XMLHttpRequest();
 	
 	//Set the XML HTTP Request Object to send stuff to the Login.php file
-	var url = urlBase + '/Login.' + extension;
+	var url = urlBase + '/login.' + extension;
 	request_object.open("POST", url);
 	
 	//send the username and password to the Login.php file
@@ -72,7 +72,7 @@ sendCreateNewAccountRequest(){
 	var request_object = new XMLHttpRequest();
 	
 	//Set the XML HTTP Request Object to send stuff to the newAccount.php file
-	var url = urlBase + '/newAccount.' + extension;
+	var url = urlBase + '/register.' + extension;
 	request_object.open("POST", url);
 	
 	//send the username and password to the newAccount.php file
