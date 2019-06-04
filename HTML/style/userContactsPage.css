@@ -25,6 +25,43 @@ a[class="button"]
    text-decoration: none;
 }
 
+#contactsTitle
+{
+   display: block;
+   margin-left: 5%;
+   font-size: 3em;
+}
+
+#userInterfaceDiv
+{
+   width: 85%;
+   margin: auto;
+   padding: 1px;
+   border: #FFF 5px solid;
+   background: #FFF;
+   border-radius: 20px;
+}
+
+#contactButtonsBox
+{
+   padding: 16px;
+   background: url('../images/loginBox.png');
+   background-size: cover;
+   border-radius: 15px;
+   border-bottom-left-radius: 0;
+   border-bottom-right-radius: 0;
+   border-bottom: #FFF 6px solid;
+}
+
+#contactsBox
+{
+   padding: 16px;
+   background: #FFF9DD;
+   border-radius: 15px;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+}
+
 .button
 {
    display: inline;
@@ -44,10 +81,10 @@ a[class="button"]
    background: #FFF9DD;
 }
 
-.button:active
+.btnContainer .button:hover
 {
-   color: #374785;
-   background: #FFF9DD;
+   color: #FFF;
+   background: #FFB7B7;
 }
 
 .button2
@@ -66,33 +103,38 @@ a[class="button"]
 
 .button2:hover
 {
-   color: #FFF9DD;
+   color: #A8D0E6;
 }
 
 #logoutBtn
 {
-	margin: 16px;
-	display: block;
+	text-align: right;
+	display: inline-block;
 }
 
 
-#btnContainer
+.btnContainer
 {
-   padding-top: 20px;
+   padding-bottom: 20px;
 }
 
-#btnContainer p
+.btnContainer p
 {
    display: inline;
    padding: 10px;
    margin: 0;
 }
 
+#formsDiv
+{
+   padding-left: 10px;
+   border-bottom: 2px #F8E9A1 solid;
+   display: block;
+}
+
 .myForm
 {
    box-sizing: border-box;
-   padding: 20px;
-   width: 50%;
 }
 
 .myForm .formGroup
@@ -137,4 +179,156 @@ a[class="button"]
 .myForm a
 {
    display: inline;
+}
+
+#searchForm .formGroup
+{
+   width: 100%;
+}
+
+#searchForm input[type="text"]
+{
+   width: 300px;
+   display: inline-block;
+}
+
+#searchForm .btnContainer
+{
+   padding-left: 10px;
+   display: inline;
+}
+
+#searchForm .button2
+{
+   margin: 10px 10px;
+}
+
+
+#contactsDisplay
+{
+   height: 500px;
+   overflow: auto;
+}
+
+/* table */
+
+#contactTable
+{
+   margin: auto;
+   color: #24305E;
+   border-collapse: collapse;
+   width: 100%;
+}
+
+#contactTable tr:nth-child(even)
+{
+   background-color: #F8E9A1;
+}
+
+#contactTable tr:hover:not(#firstRow)
+{
+   background-color: #A8D0E6;
+}
+
+#contactTable tr.selected:not(#firstRow)
+{
+   background-color: #FFB7B7;
+}
+
+#contactTable tr.selected:hover:not(#firstRow)
+{
+   background-color: #FFEDED;
+}
+
+#contactTable th, #contactTable td
+{
+   padding-left: 10px;
+}
+
+#contactTable th
+{
+   height: 40px;
+   text-align: left;
+}
+
+#contactTable td
+{
+   height: 30px;
+}
+
+/* table headers */
+
+#contactTable th[name="lastname"]
+{
+   width: 15%;
+}
+
+#contactTable th[name="firstname"]
+{
+   width: 15%;
+}
+
+#contactTable th[name="email"]
+{
+   width: 20%;
+}
+
+#contactTable th[name="phone"]
+{
+   width: 15%;
+}
+
+#contactTable th[name="address"]
+{
+   width: 35%;
+}
+
+/* table data */
+
+#contactTable td[name="lastname"]
+{
+   text-align: left;
+}
+
+#contactTable td[name="firstname"]
+{
+   text-align: left;
+}
+
+#contactTable td[name="email"]
+{
+   text-align: left;
+}
+
+#contactTable td[name="phone"]
+{
+   text-align: left;
+   white-space: nowrap;
+}
+
+#contactTable td[name="address"]
+{
+   text-align: left;
+}
+
+::-webkit-scrollbar
+{
+   width: 6px;
+   height: 6px;
+}
+
+::-webkit-scrollbar-corner
+{
+   background: inherit;
+}
+
+::-webkit-scrollbar-thumb
+{
+   background-color: #F76C6C;
+   border-radius: 7px;
+}
+
+::-webkit-resizer
+{
+   background: #F76C6C;
 }

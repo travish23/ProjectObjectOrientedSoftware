@@ -52,18 +52,31 @@ a[class="button"]
    background: #FFF9DD;
 }
 
-.button:active
+.button2
 {
+   display: inline;
+   box-sizing: border-box;
+	background: none;
+   border: none;
    color: #374785;
-   background: #FFF9DD;
+	padding: 0;
+   margin: 10px 20px;
+   font-size: 14px;
+   font-weight: bold;
+   outline: none;
 }
 
-#btnContainer
+.button2:hover
+{
+   color: #FFF9DD;
+}
+
+.btnContainer
 {
    padding-top: 20px;
 }
 
-#btnContainer p
+.btnContainer p
 {
    display: inline;
    padding: 10px;
@@ -165,7 +178,7 @@ a[class="button"]
 }
 @media screen and (max-width: 940px)
 {
-   .button, #btnContainer p
+   .button, .btnContainer p
    {
       display: block;
    }
