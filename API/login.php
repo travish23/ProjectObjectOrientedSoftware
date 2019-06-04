@@ -9,8 +9,8 @@
 	    
 		$usernameInput = $obj["username"];
 		$passwordInput = $obj["password"];
-    
-		$conn = getDataBase();
+		
+    		$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 		
 		// Bad Connection to the DB
 		if(mysqli_connect_errno($conn))
