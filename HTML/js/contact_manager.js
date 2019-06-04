@@ -85,19 +85,17 @@ sendCreateNewAccountRequest(){
 	//TODO: figure out what to do with the information we get back
 	
 	
-	
-	if(response_object.complete == 0){
-		document.getElementById("failMessage").style.visibility = "visible";
-		document.getElementById("failMessage").style.dislplay = "inline";
-		
-	}
-	
 	if(response_object.complete == 1){
 		current_user_ID = response_object.user_ID;
 		
 		window.location.replace("http://www.contactmanager.site/userContactsPage.html");
-		
 	}
+	else{
+		document.getElementById("failMessage2").style.visibility = "visible";
+		document.getElementById("failMessage2").style.dislplay = "inline";
+		
+	} 
+	
 }
 
 //sends request for server to logout
