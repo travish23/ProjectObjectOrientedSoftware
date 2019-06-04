@@ -27,6 +27,12 @@ body
    font-size: 5em;
 }
 
+#failMessage
+{
+   display: inline;
+   color: #F76C6C;
+}
+
 a[class="button"]
 {
    display: inline;
