@@ -4,7 +4,7 @@
 	// 	-search, 	which should be the name or part of the name the user wants to use to search the database
 	
 	// this script will return a json in the format of {"results":"", "error":""} 
-	// and results will be in a 2d array of contacts(rows) with columns: name, email, phone, address
+	// and results will be in a 2d array of contacts(rows) with columns: contact_id, name, email, phone, address
 	
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
@@ -26,7 +26,7 @@
 	}
 	
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
-	$sql = "SELECT name, email, phone, address FROM Contacts WHERE 
+	$sql = "SELECT contact_id, name, email, phone, address FROM Contacts WHERE 
 		(name LIKE '%" . $searchQuery . "%') AND (ID = '" . $userID . "')";
 	
 	$result = $con->query($sql);
@@ -42,6 +42,7 @@
 	while($row = $result->fetch_assoc())
 	{
 		// add each element of the contact result
+		$contact[] = $row["contact_id"];
 		$contact[] = $row["name"];
 		$contact[] = $row["email"];
 		$contact[] = $row["phone"];
