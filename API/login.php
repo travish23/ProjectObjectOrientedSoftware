@@ -66,6 +66,7 @@
         			    $response->password = $passwordDB;
         			    $response->state = 3;
         			    echo json_encode($response);
+				    echo json_encode($ID);
 					}
 				}
 			}
