@@ -51,8 +51,10 @@
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
         			    $response->password = $passwordDB;
+				    $response->user_ID = $ID;
         			    $response->state = 1;
         			    echo json_encode($response);
+
         			    
 						$_SESSION['login_user'] = $usernameDB;
 						//header("location: contact_manager.php");
@@ -64,9 +66,9 @@
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
         			    $response->password = $passwordDB;
+			            $response->user_ID = $ID;
         			    $response->state = 3;
         			    echo json_encode($response);
-				    echo json_encode($ID);
 					}
 				}
 			}
