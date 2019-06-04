@@ -1,5 +1,5 @@
 <?php
-	
+	include("config.php");
 	session_start();
 	$_SESSION = array();
 	$obj = json_decode(file_get_contents('php://input'), true);
@@ -7,10 +7,10 @@
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 	    
-		$usernameInput = $obj["username"];
-		$passwordInput = $obj["password"];
-		
-    		$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+		$usernameEntry = $obj["username"];
+		$passwordEntry = $obj["password"];
+    
+		$conn = getDataBase();
 		
 		// Bad Connection to the DB
 		if(mysqli_connect_errno($conn))
@@ -22,7 +22,7 @@
 		{			
 			$stmt = $conn->prepare("SELECT username, password FROM Users WHERE username = ?");
 			
-			$stmt->bind_param("s", $usernameInput);
+			$stmt->bind_param("s", $usernameEntry);
 			
 			$stmt->execute();
 						
@@ -46,7 +46,7 @@
 				while ($stmt->fetch())
 				{
 				    // Correct password
-					if (password_verify($passwordInput, $passwordDB))
+					if (password_verify($passwordEntry, $passwordDB))
 					{
 					    // Send JSON response
 					    $response = new \stdClass();
