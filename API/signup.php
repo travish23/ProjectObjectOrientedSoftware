@@ -7,6 +7,7 @@
 	{
 		$username = $_POST['username'];
 		$password = $_POST['password']; 
+		$email = $_POST['email']
 		$authpassword = $_POST['password_confirm'];
 		
 		if($password != $authpassword)
