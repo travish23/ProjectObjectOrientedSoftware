@@ -17,8 +17,8 @@ function updateApplication(event)
 // Called when submit button on login page is hit
 function doLogin()
 {
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("password").value;
+	var username = document.getElementsByName("username")[0].value;
+	var password = document.getElementsByName("password")[0].value;
 	
 	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 	
