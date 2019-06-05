@@ -5,11 +5,12 @@
 	// this script will return a json in the format of {"results":"", "error":""} 
 	// and results will be in a 2d array of contacts(rows) with columns: contact_id, name, email, phone, address
 	
-	echo "php input is: ";
-	var_dump($input);
 	
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
+	
+	echo "php input is: ";
+	var_dump($input);
 	
 	// parse input data
 	$userID = $input["ID"];
