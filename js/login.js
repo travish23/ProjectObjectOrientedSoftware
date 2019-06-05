@@ -39,7 +39,7 @@ function doLogin()
 
 				// Passwords matched
 				if(json.state == 1) {
-				    window.location.href = 'https://contactmanager.site/LAMPAPI/contact_manager.php';
+				    window.location.href = 'https://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
 				}
 				else{
 				    alert("Incorrect Username or Password");
