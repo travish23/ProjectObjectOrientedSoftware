@@ -12,6 +12,8 @@ var current_user_ID = 0;
 //sends the username and password to the server for login
 sendUsernameAndPassword(){
 	
+	console.log("Got into sendUsernameAndPassword()");
+	
 	//gets the elements given by the user and store them in variables
 	var name = getElementById("username").value;
 	var user_password = getElementById("password").value;
@@ -25,6 +27,8 @@ sendUsernameAndPassword(){
 	//turns that object into a JSON object
 	var json_payload = JSON.stringify(payload);
 	
+	console.log("The json payload is " + json_payload);
+	
 	//create the XML HTTP Request object
 	var request_object = new XMLHttpRequest();
 	
@@ -37,6 +41,8 @@ sendUsernameAndPassword(){
 	
 	//creates an object to get information back
 	var response_object = JSON.parse(request_object.response);
+	
+	console.log("The response object is " + request_object.response);
 	
 	if(response_object.state == 1){
 		//updates the current user variable to the person who just logged in
@@ -55,6 +61,9 @@ sendUsernameAndPassword(){
 
 //sends request to create new account with username and password. Displays failure or success
 sendCreateNewAccountRequest(){
+	
+	console.log("Got into sendCreateNewAccountRequest()");
+	
 	//gets the elements given by the user and store them in variables
 	var name = getElementById("username").value;
 	var user_password = getElementById("password").value;
@@ -68,6 +77,8 @@ sendCreateNewAccountRequest(){
 	//turns that object into a JSON object
 	var json_payload = JSON.stringify(payload);
 	
+	console.log("The json payload is " + json_payload);
+	
 	//create the XML HTTP Request object
 	var request_object = new XMLHttpRequest();
 	
@@ -80,6 +91,8 @@ sendCreateNewAccountRequest(){
 	
 	//creates an object to get information back
 	var response_object = JSON.parse(request_object.response);
+	
+	console.log("The response object is " + request_object.response)
 	
 	
 	//TODO: figure out what to do with the information we get back
@@ -101,6 +114,8 @@ sendCreateNewAccountRequest(){
 //sends request for server to logout
 sendLogoutRequest(){
 	
+	console.log("Got into sendLogoutRequest()");
+	
 	//creates a new XML HTTP Request Object
 	var request_object = new XMLHttpRequest();
 	
@@ -118,6 +133,8 @@ sendLogoutRequest(){
 
 // sends the contact information a user inputs to the server, and displays updated table
 sendAddContactRequest(){
+	
+	console.log("Got into sendAddContactRequest()");
 	
 	// gets the contact information given by user and stores them in variables.
 	var first_name = getElementById("firstName").value;
@@ -145,6 +162,8 @@ sendAddContactRequest(){
 	//converts that object into  JSON object
 	var json_payload = JSON.stringify(payload);
 	
+	console.log("The json payload is " + json_payload);
+	
 	//creates the XML HTTP Request object
 	var request_object = new XMLHttpRequest();
 
@@ -163,6 +182,9 @@ sendAddContactRequest(){
 
 //sends request to delete a specific contact and displays updated table
 sendDeleteRequest(){
+	
+	console.log("Got into sendDeleteRequest()");
+	
 	//TODO: figure out how to get contact ID from table
 	//TODO: send an XML HTTP request with that contact ID
 	//TODO: display updated contact list
@@ -170,6 +192,9 @@ sendDeleteRequest(){
 
 //sends a request to edit a specific contact and displays updated table
 sendEditRequest(){
+	
+	console.log("Got into sendEditRequest()");
+	
 	//TODO: figure out how to get contact ID from table
 	//TODO: send an XML HTTP request with that contact ID and the contact info
 	//TODO: display updated contact list
@@ -178,6 +203,8 @@ sendEditRequest(){
 
 //sends request for server to search for the name in the search field
 sendSearchRequest(){
+	
+	console.log("Got into sendSearchRequest()");
 	
 	//sets a variable to the search field
 	var search_input = getElementById("search").value;
@@ -192,6 +219,8 @@ sendSearchRequest(){
 	//creates a json object out of that object
 	var json_payload = JSON.stringify(payload);
 	
+	console.log("The json payload is " + json_payload);
+	
 	//creates an XML HTTP Request object
 	var request_object = new XMLHttpRequest();
 	
@@ -201,6 +230,8 @@ sendSearchRequest(){
 	
 	//sends a request with
 	request_object.send(json_payload);
+	
+	console.log("The response object is " + request_object.response)
 	
 	//TODO: Display results of the search
 	
