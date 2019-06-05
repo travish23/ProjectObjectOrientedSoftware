@@ -30,7 +30,8 @@
 	
 	$result = $con->query($sql);
 	
-	
+	echo "sql result is "
+	var_dump($result);
 	
 	// return no results error if no results found
 	if ($result->num_rows < 1)
@@ -42,8 +43,6 @@
 	// loop through the hits
 	while($row = $result->fetch_assoc())
 	{
-		echo $row["name"]; 
-		
 		// add each element of the contact result
 		$contact[] = $row["contact_id"];
 		$contact[] = $row["name"];
