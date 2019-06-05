@@ -259,6 +259,14 @@ function displayAllContacts(){
 	
 	}
 	
+	var i;
+	/*
+	for(i = 0; i < response_object.length; i++){
+		
+	}
+	*/
+	console.log(response_object.results[1][2]);
+	
 	
 	var url = urlBase + "/displayAllContactsForUser." + extension;
 	request_object.open("POST", url);
