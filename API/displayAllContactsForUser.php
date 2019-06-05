@@ -17,11 +17,13 @@
 	$searchResults = array();
 	$contact = array();
 	
+	echo "pre connection";
+	
 	// try to connect to database
 	$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	if ($con->connect_error)
 	{
-		echo "sql connection failed"
+		echo "sql connection failed";
 		sendError($con->connect_error);
 		return;
 	}
@@ -29,12 +31,12 @@
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
 	$sql = "SELECT * FROM Contacts WHERE ID = '" . $userID . "'";
 	
-	echo "sql query is "
+	echo "sql query is ";
 	var_dump($sql);
 	
 	$result = $con->query($sql);
 	
-	echo "sql result is "
+	echo "sql result is ";
 	var_dump($result);
 	
 	// return no results error if no results found
