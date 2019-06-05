@@ -13,9 +13,6 @@
 	$userID = $input["ID"];
 
 
-	echo "user id is ";
-	echo $userID;
-
 	// initialize result variables
 	$searchResults = array();
 	$contact = array();
@@ -29,9 +26,11 @@
 	}
 	
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
-	$sql = "SELECT contact_id, name, email, phone, address FROM Contacts WHERE ID = '" . $userID . "'";
+	$sql = "SELECT * FROM Contacts WHERE ID = '" . $userID . "'";
 	
 	$result = $con->query($sql);
+	
+	
 	
 	// return no results error if no results found
 	if ($result->num_rows < 1)
@@ -43,6 +42,8 @@
 	// loop through the hits
 	while($row = $result->fetch_assoc())
 	{
+		echo $row["name"]; 
+		
 		// add each element of the contact result
 		$contact[] = $row["contact_id"];
 		$contact[] = $row["name"];
@@ -63,7 +64,6 @@
 	// sends a json to what called this script
 	function returnJson($json)
 	{
-		header('Content-type: application/json');
 		echo $json;
 	}
 
