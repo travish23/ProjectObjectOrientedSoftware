@@ -208,11 +208,13 @@ function sendSearchRequest(){
 	
 	//sets a variable to the search field
 	var search_input = getElementById("search").value;
-	var userID = current_user_ID;
+	//var userID = current_user_ID;
 	
 	//creates an object with that value
 	var payload = { 
-		ID: userID,
+		//ID: userID,
+		//CHANGED TO ONE FOR TESTING PURPOSES
+		ID: 1,
 		search: search_input
 	};
 	

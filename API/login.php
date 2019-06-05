@@ -7,9 +7,9 @@
 	{
 	    
 		$usernameEntry = $obj["username"];
-		$passwordEntry = $obj["password"];
+		$passwordEntry = $obj["psw"];
     
-		$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+		$con = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 		
 		// Bad Connection to the DB
 		if(mysqli_connect_errno($conn))
@@ -19,7 +19,7 @@
 		// Successful connection to DB
 		else
 		{			
-			$stmt = $conn->prepare("SELECT username, password FROM Users WHERE username = ?");
+			$stmt = $conn->prepare("SELECT name, password FROM Users WHERE name = ?");
 			
 			$stmt->bind_param("s", $usernameEntry);
 			
@@ -34,7 +34,7 @@
 				// Send JSON response
 			    $response = new \stdClass();
 			    $response->username = $usernameDB;
-			    $response->password = $passwordDB;
+			    $response->psw= $passwordDB;
 			    $response->state = 2;
 			    echo json_encode($response);
 				exit();
@@ -50,8 +50,8 @@
 					    // Send JSON response
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
-        			    $response->password = $passwordDB;
-				    $response->user_ID = $ID;
+        			    $response->psw = $passwordDB;
+				    $response->user_id = $ID;
         			    $response->state = 1;
         			    echo json_encode($response);
 
@@ -65,8 +65,8 @@
 						// Send JSON response
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
-        			    $response->password = $passwordDB;
-			            $response->user_ID = $ID;
+        			    $response->psw= $passwordDB;
+			            $response->user_id = $ID;
         			    $response->state = 3;
         			    echo json_encode($response);
 					}
