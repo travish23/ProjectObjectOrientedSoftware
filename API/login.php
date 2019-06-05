@@ -1,5 +1,5 @@
 <?php
-	echo "try2";
+	// echo "try2";
 	session_start();
 	$_SESSION = array();
 	$obj = json_decode(file_get_contents('php://input'), true);
