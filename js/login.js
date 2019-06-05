@@ -16,7 +16,7 @@ function doLogin()
 	try
 	{
 		xhr.send(jsonPayload);
-		console.log("after send");
+		console.log("response: " + xhr.response);
 
 		xhr.onreadystatechange = function()
 		{
