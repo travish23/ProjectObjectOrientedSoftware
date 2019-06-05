@@ -17,7 +17,7 @@
       <div id="loginBox">
 
          <!-- Login form to log in or create a new account -->
-         <form class="myForm" id="loginForm" onsubmit="sendUsernameAndPassword();">
+         <form class="myForm" id="loginForm" action="LAMPAPI/login.php">
 
             <!-- Username element -->
             <div class="formGroup">
@@ -36,9 +36,9 @@
 
             <!-- Login, create new account, and forgot password buttons -->
             <div class="btnContainer">
-               <input type="submit" class="button" name="login" value="Login">
+               <input type="submit" class="button" id="loginBtn" value="Login">
                <p>or</p>
-               <input type="button" class="button" id="newAccountBtn" onclick="sendCreateNewAccountRequest();" value="Create New Account">
+               <input type="button" class="button" id="newAccountBtn" formaction="LAMPAPI/register.php" value="Create New Account">
                <input type="button" class="button2" id="forgotPassBtn" onclick="forgotPassword();" value="I forgot my password">
             </div>
 
