@@ -9,11 +9,9 @@
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
-	echo "php input is: ";
-	var_dump($input);
-	
 	// parse input data
 	$userID = $input["ID"];
+
 
 	// initialize result variables
 	$searchResults = array();
@@ -28,9 +26,15 @@
 	}
 	
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
-	$sql = "SELECT contact_id, name, email, phone, address FROM Contacts WHERE ID = '" . $userID . "'";
+	$sql = "SELECT * FROM Contacts WHERE ID = '" . $userID . "'";
+	
+	echo "sql query is "
+	var_dump($sql);
 	
 	$result = $con->query($sql);
+	
+	echo "sql result is "
+	var_dump($result);
 	
 	// return no results error if no results found
 	if ($result->num_rows < 1)
@@ -62,7 +66,6 @@
 	// sends a json to what called this script
 	function returnJson($json)
 	{
-		header('Content-type: application/json');
 		echo $json;
 	}
 
