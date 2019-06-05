@@ -16,13 +16,14 @@ function doLogin()
 	try
 	{
 		xhr.send(jsonPayload);
-		console.log("response: " + xhr.response);
 
 		xhr.onreadystatechange = function()
 		{
+			console.log("response: " + xhr.response);
 		    // Complete
 			if (xhr.readyState == 4 && xhr.status == 200)
 			{
+				console.log("(if) response: " + xhr.response);
                 var json = JSON.parse(xhr.response);
 
 				// Passwords matched
