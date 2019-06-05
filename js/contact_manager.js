@@ -10,7 +10,7 @@ var current_user_ID = 0;
 // and use that function where needed
 
 //sends the username and password to the server for login
-sendUsernameAndPassword(){
+function sendUsernameAndPassword(){
 	
 	console.log("Got into sendUsernameAndPassword()");
 	
@@ -60,7 +60,7 @@ sendUsernameAndPassword(){
 }
 
 //sends request to create new account with username and password. Displays failure or success
-sendCreateNewAccountRequest(){
+function sendCreateNewAccountRequest(){
 	
 	console.log("Got into sendCreateNewAccountRequest()");
 	
@@ -112,7 +112,7 @@ sendCreateNewAccountRequest(){
 }
 
 //sends request for server to logout
-sendLogoutRequest(){
+function sendLogoutRequest(){
 	
 	console.log("Got into sendLogoutRequest()");
 	
@@ -132,7 +132,7 @@ sendLogoutRequest(){
 }
 
 // sends the contact information a user inputs to the server, and displays updated table
-sendAddContactRequest(){
+function sendAddContactRequest(){
 	
 	console.log("Got into sendAddContactRequest()");
 	
@@ -181,7 +181,7 @@ sendAddContactRequest(){
 }
 
 //sends request to delete a specific contact and displays updated table
-sendDeleteRequest(){
+function sendDeleteRequest(){
 	
 	console.log("Got into sendDeleteRequest()");
 	
@@ -191,7 +191,7 @@ sendDeleteRequest(){
 }
 
 //sends a request to edit a specific contact and displays updated table
-sendEditRequest(){
+function sendEditRequest(){
 	
 	console.log("Got into sendEditRequest()");
 	
@@ -202,7 +202,7 @@ sendEditRequest(){
 }
 
 //sends request for server to search for the name in the search field
-sendSearchRequest(){
+function sendSearchRequest(){
 	
 	console.log("Got into sendSearchRequest()");
 	

@@ -1,15 +1,28 @@
 <?php
-
 	session_start();
-	$_SESSION = array();
+	$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+	
 	
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		$username = $_POST['username'];
 		$password = $_POST['password']; 
-		//$authpassword = $_POST['password_confirm'];
+		$authpassword = $_POST['password_confirm'];
 		
-		$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+		if($password != $authpassword)
+		{
+			
+		echo '<script type="text/javascript">
+
+                window.onload = function () { alert("Passwords do not match"); }
+            
+                </script>';
+		
+			
+			exit();
+		}
+		
+	
 		
 		if (mysqli_connect_errno($conn))
 		{
@@ -18,26 +31,34 @@
 		
 		else
 		{
-			$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+			//$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 			
-			$stmt = $conn->prepare("INSERT INTO Users (Username,Password) VALUES (?, ?)");
+			$stmt = $conn->prepare("INSERT INTO Users (name,password) VALUES (?, ?)");
 			
-			$stmt->bind_param("ss", $username, $hashed_password);
+			$stmt->bind_param("ss", $username, $password);
 			
 			if($stmt->execute())
 			{
-				echo "<script>";
-				echo 'alert("Successful Sign Up!");';
-				echo 'location = "index.html"';
-				echo "</script>";
+			    echo '<script type="text/javascript">
+
+                window.onload = function () { alert("Successfull Signup!"); }
+
+                </script>';
+			
+			   
+			
 			}
 			
 			else
 			{
-				echo "<script>";
-				echo 'alert("Username taken, please choose another");';
-				echo 'location = "index.html"';
-				echo "</script>";
+			
+				echo '<script type="text/javascript">
+
+                window.onload = function () { alert("Username take, please try again"); }
+
+                </script>';
+				
+				
 			}
 			
 			$stmt->close();
@@ -45,15 +66,4 @@
 		}
 	}
 	
-	function sendResultInfoAsJson( $obj )
-	{
-		header('Content-type: application/json');
-		echo $obj;
-	}
-	
-	function returnWithError( $err )
-	{
-		$retValue = '{"error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
-	}
 ?>
