@@ -1,5 +1,5 @@
 <?php
-    include("config.php")
+   
 	
 	
     session_start();
@@ -204,51 +204,7 @@
         </div>
 
 
-        <!-- Trigger the modal with a button -->
-        <button id="addContactModal" name="addContactModal" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Add Contact</button>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Contact</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="javascript:addContact();" method="POST">
-                            <div class="form-group">
-                                <label>Name:</label>
-                                <input id="contact_name" name="contact_name" type="text" class="form-control" placeholder="Enter contact name" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email:</label>
-                                <input id="contact_email" name="contact_email" type="text" class="form-control" placeholder="Enter contact email">
-                            </div>
-                            <div class="form-group"> <!-- There is probably a better way to do this -->
-                                <label>Phone:</label>
-                                <input id="contact_phone" name="contact_phone" type="number" class="form-control" placeholder="Enter contact phone number">
-                            </div>
-                            <div class="form-group"> <!-- There is probably a better way to do this -->
-                                <label>Address:</label>
-                                <input id="contact_address" name="contact_address" type="text" class="form-control" placeholder="Enter contact address">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" onclick="javascript:window.location.reload()" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-
-<script>
+    <script>
 
 
 function searchList() {
