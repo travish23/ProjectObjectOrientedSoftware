@@ -7,7 +7,7 @@ function doLogin()
 
 	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 
-	var url = 'https://contactmanager.site/ProjectObjectOrientedSoftware/API/login.php';
+	var url = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/login.php';
 	//alert("Javascript");
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url);
