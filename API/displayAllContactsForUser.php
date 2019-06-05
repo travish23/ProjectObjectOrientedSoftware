@@ -15,27 +15,19 @@
 
 	// initialize result variables
 	$searchResults = array();
-	$contact = array();
 	
 	// try to connect to database
-	$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+	$con = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	if ($con->connect_error)
 	{
-		echo "sql connection failed"
 		sendError($con->connect_error);
 		return;
 	}
 	
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
-	$sql = "SELECT * FROM Contacts WHERE ID = '" . $userID . "'";
-	
-	echo "sql query is "
-	var_dump($sql);
+	$sql = "SELECT * FROM Contacts WHERE owner_id = '" . $userID . "'";
 	
 	$result = $con->query($sql);
-	
-	echo "sql result is "
-	var_dump($result);
 	
 	// return no results error if no results found
 	if ($result->num_rows < 1)
@@ -47,8 +39,10 @@
 	// loop through the hits
 	while($row = $result->fetch_assoc())
 	{
+		$contact = array();
 		// add each element of the contact result
 		$contact[] = $row["contact_id"];
+		$contact[] = $row["owner_id"];
 		$contact[] = $row["name"];
 		$contact[] = $row["email"];
 		$contact[] = $row["phone"];
@@ -79,6 +73,6 @@
 	// format a json to return searchResults
 	function sendInfo($searchResults)
 	{
-		returnJson('{"results":[' . json_encode($searchResults) . '], "error":""}');
+		returnJson('{"results":' . json_encode($searchResults) . ', "error":""}');
 	}
 ?>

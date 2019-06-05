@@ -19,9 +19,9 @@ function doLogin()
 {
 	var username = document.getElementById("loginUser").value;
 	var password = document.getElementById("loginPass").value;
-	
-	var jsonPayload = '{"username" : "' + loginUser + '", "password" : "' + loginPass + '"}';
-	
+
+	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
+
 	var url = 'https://contactmanager.site/login.php';
 	//alert("Javascript");
 	var xhr = new XMLHttpRequest();
@@ -30,16 +30,16 @@ function doLogin()
 	try
 	{
 		xhr.send(jsonPayload);
-		xhr.onreadystatechange = function() 
+		xhr.onreadystatechange = function()
 		{
 		    // Complete
-			if (xhr.readyState == 4 && xhr.status == 200) 
+			if (xhr.readyState == 4 && xhr.status == 200)
 			{
                 var json = JSON.parse(xhr.response);
-				
+
 				// Passwords matched
 				if(json.state == 1) {
-				    window.location.href = 'https://contactmanager.site/LAMPAPI/contact_manager.php';
+				    window.location.href = 'https://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
 				}
 				else{
 				    alert("Incorrect Username or Password");
@@ -50,9 +50,9 @@ function doLogin()
         //alert("after payload");
         //var test = JSON.parse(xhr.response);
         //alert("we parsed");
-		
+
 	}
-	
+
 	catch(err)
 	{
 		alert(err.message);

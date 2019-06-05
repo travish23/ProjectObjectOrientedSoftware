@@ -6,10 +6,10 @@
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 	    
-		$usernameEntry = $obj["loginUser"];
-		$passwordEntry = $obj["loginPass"];
+		$usernameEntry = $obj["username"];
+		$passwordEntry = $obj["password"];
     
-		$con = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+		$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 		
 		// Bad Connection to the DB
 		if(mysqli_connect_errno($conn))
