@@ -18,7 +18,7 @@
 	$contact = array();
 	
 	// try to connect to database
-	$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+	$con = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	if ($con->connect_error)
 	{
 		sendError($con->connect_error);
@@ -26,8 +26,8 @@
 	}
 	
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
-	$sql = "SELECT contact_id, name, email, phone, address FROM Contacts WHERE 
-		(name LIKE '%" . $searchQuery . "%') AND (ID = '" . $userID . "')";
+	$sql = "SELECT * FROM Contacts WHERE 
+		(name LIKE '%" . $searchQuery . "%') AND (owner_id = " . $userID . ")";
 	
 	$result = $con->query($sql);
 	
