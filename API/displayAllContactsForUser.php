@@ -29,7 +29,7 @@
 	}
 	
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
-	$sql = "SELECT * FROM Contacts WHERE ID = '" . $userID . "'";
+	$sql = "SELECT * FROM Contacts WHERE owner_id = '" . $userID . "'";
 	
 	echo "sql query is ";
 	var_dump($sql);
