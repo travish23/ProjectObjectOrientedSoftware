@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- epic win -->
+
    <head>
 
       <title>COP 4331</title>
@@ -21,17 +21,16 @@
             <!-- Username element -->
             <div class="formGroup">
                <label for="username">Username</label>
-               <input type="text" name="username" id="username" placeholder="Enter username">
+               <input type="text" name="username" placeholder="Enter username">
             </div>
 
             <!-- Password element -->
             <div class="formGroup">
                <label for="password">Password</label>
-               <input type="password" name="password" id="password" placeholder="Enter password">
+               <input type="password" name="password" placeholder="Enter password">
             </div>
-
+            
             <p id="failMessage" style="display:none; visibility:hidden;">Username and password do not match.</p>
-            <p id="failMessage2" style="display:none; visibility:hidden;">Couldn't create the account.</p>
 
             <!-- Login, create new account, and forgot password buttons -->
             <div class="btnContainer">
@@ -48,16 +47,19 @@
              <h2 id="register">Register</h2>
              <div class="formGroup">
                  <label>Username</label>
-                 <input id="username" name="username" type="text" class="form-control" placeholder="Enter username" required>
+                 <input name="username" type="text" class="form-control" placeholder="Enter username" required>
              </div>
              <div class="formGroup">
                  <label for="pwd">Password</label>
-                 <input id="password" name="password" type="password" class="form-control" placeholder="Enter password" required>
+                 <input name="password" type="password" class="form-control" placeholder="Enter password" required>
              </div>
              <div class="formGroup">
                  <label for="pwd">Confirm Password</label>
-                 <input id="password_confirm" name="password_confirm" type="password" class="form-control" placeholder="Enter password" required>
+                 <input name="password_confirm" type="password" class="form-control" placeholder="Enter password" required>
              </div>
+
+             <p id="failMessage2" style="display:none; visibility:hidden;">Couldn't create the account.</p>
+
              <div class="btnContainer">
                <input type="submit" class="button" name="submit"  value="Register"  id="submit">
                <button type="button" class="button2" id="cancelRegisterButton" onclick="cancelRegister();">Go Back</button>
