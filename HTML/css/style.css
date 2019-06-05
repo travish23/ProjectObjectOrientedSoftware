@@ -27,12 +27,13 @@ body
    font-size: 5em;
 }
 
-#failMessage
+h2
 {
-   display: inline;
-   color: #F76C6C;
+  display:block;
+  font-size: 2em;
+  color: #FFF;
+  margin-top: 10px;
 }
-
 a[class="button"]
 {
    display: inline;
@@ -107,6 +108,7 @@ a[class="button"]
    margin: auto;
    margin-top: 40px;
    padding: 16px;
+   padding-top: 0;
    border: #FFF 5px solid;
    border-radius: 20px;
 }
@@ -156,6 +158,8 @@ a[class="button"]
 {
    display: inline;
 }
+
+
 
 @media screen and (max-width: 1394px)
 {
