@@ -1,4 +1,4 @@
-var urlBase = 'http://contactmanager.site/ProjectObjectOritentedSoftware/API';
+var urlBase = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API';
 var extension = "php";
 
 var current_user_ID = 0;
