@@ -265,7 +265,7 @@ function displayAllContacts(){
 		
 	}
 	*/
-	console.log(response_object.results[1][2]);
+	console.log("response_object[1][2] is " + response_object.results[1][2]);
 	
 	
 	var url = urlBase + "/displayAllContactsForUser." + extension;
