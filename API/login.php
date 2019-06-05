@@ -35,6 +35,7 @@
 			    $response = new \stdClass();
 			    $response->username = $usernameDB;
 			    $response->psw= $passwordDB;
+			    $response->user_id = $ID;
 			    $response->state = 2;
 			    echo json_encode($response);
 				exit();
