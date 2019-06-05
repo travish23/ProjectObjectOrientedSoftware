@@ -10,7 +10,7 @@ function doLogin()
 	var url = 'https://contactmanager.site/ProjectObjectOrientedSoftware/API/login.php';
 	//alert("Javascript");
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
+	xhr.open("POST", url);
 	xhr.setRequestHeader("Content-type", 'application/json; charset=UTF-8');
 	console.log("try");
 	try
