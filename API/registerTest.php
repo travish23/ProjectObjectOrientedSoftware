@@ -14,7 +14,7 @@
 		return;
 	}
 	
-	$sql = "INSERT INTO Users name, password VALUES user, pass";
+	$sql = "INSERT INTO Users (name, password) VALUES ('$user', pass";
 	
 	$result = $con->query($sql);
 
