@@ -51,7 +51,7 @@
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
         			    $response->psw = $passwordDB;
-				    $response->user_ID = $ID;
+				    $response->user_id = $ID;
         			    $response->state = 1;
         			    echo json_encode($response);
 
@@ -66,7 +66,7 @@
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
         			    $response->psw= $passwordDB;
-			            $response->user_ID = $ID;
+			            $response->user_id = $ID;
         			    $response->state = 3;
         			    echo json_encode($response);
 					}
