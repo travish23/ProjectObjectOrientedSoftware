@@ -208,13 +208,11 @@ function sendSearchRequest(){
 	
 	//sets a variable to the search field
 	var search_input = getElementById("search").value;
-	//var userID = current_user_ID;
+	var userID = current_user_ID;
 	
 	//creates an object with that value
 	var payload = { 
-		//ID: userID,
-		//CHANGED TO ONE FOR TESTING PURPOSES
-		ID: 1,
+		ID: userID,
 		search: search_input
 	};
 	
@@ -239,3 +237,46 @@ function sendSearchRequest(){
 	
 }
 
+function displayAllContacts(){
+	var payload = {username: current_user_ID};
+	
+	var json_payload = JSON.stringify(payload);
+	
+	var request_object = new XMLHttpRequest();
+	
+	var url = urlBase + "/displayAllContactsForUser." + extension;
+	request_object.open("POST", url);
+	request_object.send(json_payload);
+	
+	var response_object = JSON.parse(request_object.response);
+	
+	displayTable(response_object.searchResults);
+}
+
+
+function displayTable(contact_table_contents){
+	
+	var number_of_contacts = contact_table_contents.length;
+	
+	var i;
+	var rows = document.querySelectorAll(".blankRow");
+	var categories = rows[0].children;
+	rows[0].classList.remove("blankRow");
+	
+	rows[0].setAttribute("id", contact_table_contents[0][0]);
+	
+	categories[0].innerHTML = contact_table_contents[0][1];
+	categories[1].innerHTML = contact_table_contents[0][2];
+	categories[2].innerHTML = contact_table_contents[0][3];
+	categories[3].innerHTML = contact_table_contents[0][4];
+	
+	
+	/*
+	for(i = 0; i < number_of_contacts; i++){
+		
+		
+		
+	}
+	*/
+	
+}
