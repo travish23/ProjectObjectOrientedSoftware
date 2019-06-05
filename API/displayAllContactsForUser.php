@@ -73,6 +73,6 @@
 	// format a json to return searchResults
 	function sendInfo($searchResults)
 	{
-		returnJson('{"results":[' . json_encode($searchResults) . '], "error":""}');
+		returnJson('{"results":' . json_encode($searchResults) . ', "error":""}');
 	}
 ?>
