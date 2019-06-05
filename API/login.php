@@ -1,5 +1,4 @@
 <?php
-	// echo "try2";
 	session_start();
 	$_SESSION = array();
 	$obj = json_decode(file_get_contents('php://input'), true);
@@ -26,6 +25,7 @@
 
 			$stmt->execute();
 
+			// TODO: add user_id to results
 			$stmt->bind_result($usernameDB, $passwordDB);
 			$stmt->store_result();
 
@@ -67,7 +67,8 @@
         			    $response->username = $usernameDB;
         			    $response->psw= $passwordDB;
         			    $response->state = 3;
-        			    echo json_encode($response);
+        			    // echo json_encode($response);
+									echo $response;
 					}
 				}
 			}
