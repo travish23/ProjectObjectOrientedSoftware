@@ -6,8 +6,8 @@
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 	    
-		$usernameEntry = $obj["loginUser"];
-		$passwordEntry = $obj["loginPass"];
+		$usernameEntry = $obj["username"];
+		$passwordEntry = $obj["password"];
     
 		$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 		
