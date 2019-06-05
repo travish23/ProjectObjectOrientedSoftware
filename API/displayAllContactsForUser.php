@@ -15,7 +15,6 @@
 
 	// initialize result variables
 	$searchResults = array();
-	$contact = array();
 	
 	// try to connect to database
 	$con = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
@@ -40,6 +39,7 @@
 	// loop through the hits
 	while($row = $result->fetch_assoc())
 	{
+		$contact = array();
 		// add each element of the contact result
 		$contact[] = $row["contact_id"];
 		$contact[] = $row["owner_id"];
