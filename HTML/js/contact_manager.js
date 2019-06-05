@@ -48,7 +48,7 @@ sendUsernameAndPassword(){
 	}
 	else{
 		document.getElementById("failMessage").style.visibility = "visible";
-		document.getElementById("failMessage").style.dislplay = "inline";
+		document.getElementById("failMessage").style.display = "inline";
 		
 	}
 }
