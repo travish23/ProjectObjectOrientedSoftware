@@ -28,6 +28,9 @@
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
 	$sql = "SELECT * FROM Contacts WHERE ID = '" . $userID . "'";
 	
+	echo "sql query is "
+	var_dump($sql);
+	
 	$result = $con->query($sql);
 	
 	echo "sql result is "
