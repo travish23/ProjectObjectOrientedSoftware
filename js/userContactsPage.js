@@ -117,7 +117,7 @@ function allowEditSelection(event)
 {
 	const row = event.target.parentNode;
 
-	if(row.id == "firstRow" || row.id == "blankRow")
+	if(row.id == "firstRow" || row.classList.contains("blankRow"))
 		return;
 
 
