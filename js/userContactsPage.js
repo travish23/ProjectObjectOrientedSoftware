@@ -120,7 +120,6 @@ function allowEditSelection(event)
 	if(row.id == "firstRow" || row.classList.contains("blankRow"))
 		return;
 
-
 	if(!row.classList.contains("selected"))
 	{
 		row.classList.add("selected");
