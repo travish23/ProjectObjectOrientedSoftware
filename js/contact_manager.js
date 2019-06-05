@@ -1,4 +1,4 @@
-var urlBase = 'http://contactmanager.site/LAMPAPI';
+var urlBase = 'http://contactmanager.site/ProjectObjectOritentedSoftware';
 var extension = "php";
 
 var current_user_ID = 0;
