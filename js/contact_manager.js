@@ -238,6 +238,9 @@ function sendSearchRequest(){
 }
 
 function displayAllContacts(){
+	
+	console.log("Got into displayAllContac5s()");
+	
 	var payload = {username: current_user_ID};
 	
 	var json_payload = JSON.stringify(payload);
@@ -248,6 +251,7 @@ function displayAllContacts(){
 	request_object.open("POST", url);
 	request_object.send(json_payload);
 	
+	console.log("The response_object is " + request_object.response);
 	var response_object = JSON.parse(request_object.response);
 	
 	displayTable(response_object.searchResults);
