@@ -1,4 +1,4 @@
-var urlBase = 'http://contactmanager.site/ProjectObjectOritentedSoftware/API';
+var urlBase = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API';
 var extension = "php";
 
 var current_user_ID = 0;
@@ -237,11 +237,13 @@ function sendSearchRequest(){
 	
 }
 
+
 function displayAllContacts(){
 	
 	console.log("Got into displayAllContac5s()");
 	
-	var payload = {username: current_user_ID};
+	current_user_ID = 1;
+	var payload = {ID: current_user_ID};
 	
 	var json_payload = JSON.stringify(payload);
 	
@@ -251,6 +253,7 @@ function displayAllContacts(){
 	
 	request_object.onreadystatechange = function() {
 		console.log("The response_object is " + request_object.responseText);
+		
 		response_object = JSON.parse(this.responseText);
 		//document.getElementById("demo").innerHTML = myArr[0]
 	
