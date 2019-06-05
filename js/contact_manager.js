@@ -245,10 +245,13 @@ function displayAllContacts(){
 	
 	var json_payload = JSON.stringify(payload);
 	
+	
 	var request_object = new XMLHttpRequest();
+	var response_object;
+	
 	request_object.onreadystatechange = function() {
 		console.log("The response_object is " + request_object.responseText);
-		var response_object = JSON.parse(this.responseText);
+		response_object = JSON.parse(this.responseText);
 		//document.getElementById("demo").innerHTML = myArr[0]
 	
 	}
