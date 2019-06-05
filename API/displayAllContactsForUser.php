@@ -21,6 +21,7 @@
 	$con = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	if ($con->connect_error)
 	{
+		echo "sql connection failed"
 		sendError($con->connect_error);
 		return;
 	}
