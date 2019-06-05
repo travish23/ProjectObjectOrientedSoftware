@@ -67,8 +67,8 @@
         			    $response->username = $usernameDB;
         			    $response->psw= $passwordDB;
         			    $response->state = 3;
-        			    // echo json_encode($response);
-									echo $response;
+        			    echo json_encode($response);
+									// echo $response;
 					}
 				}
 			}
