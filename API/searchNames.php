@@ -66,7 +66,9 @@
 	function returnJson($json)
 	{
 		header('Content-type: application/json');
-		echo $json;
+		// echo $json;
+		
+		return $json;
 	}
 
 	// format a json to return an error
