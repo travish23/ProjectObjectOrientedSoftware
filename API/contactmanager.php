@@ -8,7 +8,7 @@
 	
     if(!isset($_SESSION['login_user']))
     {
-        header("location: login.html");
+        header("location: index.html");
         die();
     }
     if(!isset($_SESSION['searchFlag']))
@@ -18,65 +18,145 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- <script src="contacts.php"></script> -->
+<html>
 
-</head>
-<body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
-              </ul>
-          </div>
-      </div>
-    </nav>
-    <div class="jumbotron text-center">
-        <h1>Contact Manager</h1>
-        <p>The Contacts Page</p>
-    </div>
-    <div class="container">
-        <label>Search contacts:</label>
-        <div class="input-group search_symbol">
-            <input type="search" class="form-control" id="searchInput" class="form-control" onkeyup="searchList()" placeholder="Search" />
-            <span class="input-group-addon">
-                <i class="glyphicon glyphicon-search"></i>
-            </span>
-        </div>
-        <!-- <input type="text" id="searchInput" class="form-control" onkeyup="searchList()" placeholder="Search for names.." title="Type in a name"> -->
-    </div>
-    <div class="container">
-        <div>
-            <table id="contact_table" class="table">
-                <thead>
-                  <tr>
-                    <th>Contact Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Address</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
+	<head>
+		<title>Contacts</title>
+
+		<link rel="stylesheet" type="text/css" href="css/userContactsPage.css">
+		<script type="text/javascript" src="../js/userContactsPage.js" defer></script>
+		<script type="text/javascript" src="../js/contact_manager.js"></script>
+
+	</head>
+	<body onload="displayAllContacts();">
+
+		<h1 id="contactsTitle">Contacts</h1>
+
+		<div id="userInterfaceDiv">
+
+			<div id="contactButtonsBox">
+
+				<!-- SEARCH BUTTON -->
+
+				<button type="button" class="button" id="searchBtn" onclick="showSearchForm();">Search</button>
+
+				<!-- ADD BUTTON -->
+
+				<button type="button" class="button" id="addContactBtn" onclick="showContactForm();">Add</button>
+
+				<!-- DELETE BUTTON-->
+
+				<button type="button" class="button" id="deleteContactBtn" onclick="showDeleteForm();">Delete</button>
+
+				<!-- EDIT BUTTON -->
+
+				<button type="button" class="button" id="editContactBtn" onclick="showEditForm();">Edit</button>
+
+				<!-- LOGOUT BUTTON -->
+
+				<button type="button" class="button" id="logoutBtn" onclick="sendLogoutRequest();">Log Out</button>
+
+			</div> <!-- End contactButtonsBox -->
+
+			<div id="contactsBox">
+
+				<div id="formsDiv" style="display:none; visibility:hidden;">
+
+					<!-- SEARCH FORM -->
+
+					<form class="myForm" id="searchForm" onsubmit="sendSearchRequest();" style="display:none; visibility:hidden;">
+
+						<div class="formGroup">
+							<input type="text" placeholder="Search contacts..." name="search" id="search">
+
+							<div class="btnContainer">
+			               <input type="submit" class="button" name="search" value="Search">
+								<input type="button" class="button2" id="cancelSearchBtn" onclick="cancelSearch();" value="Cancel">
+			            </div>
+						</div>
+
+					</form>
+
+					<!-- ADD CONTACT FORM -->
+
+					<form class="myForm" id="contactForm" onsubmit="addContact();" style="display:none; visibility:hidden;">
+
+						<div class="formGroup">
+		               <label for="name">First name</label>
+		               <input type="text" name="firstName" id="firstName" placeholder="first name" required>
+		            </div>
+
+		            <div class="formGroup">
+		               <label for="lastName">Last name</label>
+		               <input type="text" name="lastName" id="lastName" placeholder="last name" required>
+		            </div>
+
+						<div class="formGroup">
+		               <label for="email">Email</label>
+		               <input type="email" name="email" id="email" placeholder="example@domain.com" required>
+		            </div>
+
+						<div class="formGroup">
+		               <label for="phone">Phone</label>
+		               <input type="tel" name="phone" id="phone" placeholder="xxx-xxx-xxxx" required>
+		            </div>
+
+						<div class="formGroup">
+		               <label for="address">Address</label>
+		               <input type="text" name="street" id="street" class="address" placeholder="Street" required>
+							<input type="text" name="city" id="city" class="address" placeholder="City" required>
+							<input type="text" name="state" id="state" class="address" placeholder="State" required>
+							<input type="text" name="zipCode" id="zip" class="address" placeholder="ZIP Code" required>
+		            </div>
+
+		            <div class="btnContainer">
+		               <input type="submit" class="button" name="addContact" value="Add Contact">
+							<input type="button" class="button2" id="cancelAddContactBtn" onclick="cancelAddContact();" value="Cancel">
+		            </div>
+
+					</form>
+
+					<!-- DELETE FORM -->
+
+					<form class="myForm" id="deleteForm" onsubmit="sendDeleteRequest();" style="display:none; visibility:hidden;">
+
+						<p>Please select the contact(s) to be deleted.</p>
+
+						<div class="btnContainer">
+							<input type="submit" class="button" name="deleteContact" value="Delete Selection">
+							<input type="button" class="button2" id="cancelDeleteContactBtn" onclick="cancelDeleteContact();" value="Cancel">
+						</div>
+
+					</form>
+
+					<!-- EDIT FORM -->
+
+					<form class="myForm" id="editForm" onsubmit="sendEditRequest();" style="display:none; visibility:hidden;">
+
+						<p>Please select the contact to be edited.</p>
+
+						<div class="btnContainer">
+							<input type="submit" class="button" name="editContact" value="Edit Selection">
+							<input type="button" class="button2" id="cancelEditContactBtn" onclick="cancelEditContact();" value="Cancel">
+						</div>
+
+					</form>
+
+				</div> <!-- End formsDiv -->
+
+				<div id="contactsDisplay">
+					<table id="contactTable">
+					  <tr id="firstRow">
+					    <th name="lastname">Last Name</th>
+					    <th name="firstname">First Name</th>
+					    <th name="email">Email</th>
+						 <th name="phone">Phone Number</th>
+						 <th name="address">Address</th>
+					  </tr>
 				
 				
                     <?php
-                    $conn = connectDataBase();
+                    $conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 					
                 	if(mysqli_connect_errno($conn))
                 	{
@@ -84,7 +164,7 @@
                 	}
                 	else
                 	{
-                		$stmt1 = $conn->prepare("SELECT user_id FROM Users WHERE username = ?");
+                		$stmt1 = $conn->prepare("SELECT user_id FROM Users WHERE name = ?");
 						$stmt1->bind_param("s", $user_check);
 						$stmt1->execute();
 						$stmt1->bind_result($userId);
