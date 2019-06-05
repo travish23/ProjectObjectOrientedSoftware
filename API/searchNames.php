@@ -65,10 +65,8 @@
 	// sends a json to what called this script
 	function returnJson($json)
 	{
-		header('Content-type: application/json');
-		// echo $json;
-		
-		return $json;
+		// header('Content-type: application/json');
+		echo $json;
 	}
 
 	// format a json to return an error
