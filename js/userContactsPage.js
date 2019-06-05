@@ -118,7 +118,12 @@ function allowEditSelection(event)
 	const row = event.target.parentNode;
 
 	if(row.id == "firstRow" || row.classList.contains("blankRow"))
+	{
+		console.log("yes");
 		return;
+	}
+
+	console.log(row.classList);
 
 
 	if(!row.classList.contains("selected"))
