@@ -1,5 +1,5 @@
 <?php
-    include("config.php")
+   
 	
 	
     session_start();
@@ -8,75 +8,23 @@
 	
     if(!isset($_SESSION['login_user']))
     {
-        header("location: login.html");
+        header("location: index.html");
         die();
     }
     if(!isset($_SESSION['searchFlag']))
     {
         $_SESSION['searchFlag'] = false;
+	    
+	 
     }
+
+include("../HTML/userContactsPage.html");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- <script src="contacts.php"></script> -->
 
-</head>
-<body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
-              </ul>
-          </div>
-      </div>
-    </nav>
-    <div class="jumbotron text-center">
-        <h1>Contact Manager</h1>
-        <p>The Contacts Page</p>
-    </div>
-    <div class="container">
-        <label>Search contacts:</label>
-        <div class="input-group search_symbol">
-            <input type="search" class="form-control" id="searchInput" class="form-control" onkeyup="searchList()" placeholder="Search" />
-            <span class="input-group-addon">
-                <i class="glyphicon glyphicon-search"></i>
-            </span>
-        </div>
-        <!-- <input type="text" id="searchInput" class="form-control" onkeyup="searchList()" placeholder="Search for names.." title="Type in a name"> -->
-    </div>
-    <div class="container">
-        <div>
-            <table id="contact_table" class="table">
-                <thead>
-                  <tr>
-                    <th>Contact Name</th>
-                    <th>Email</th>
-                    <th>Phone Number</th>
-                    <th>Address</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-				
 				
                     <?php
-                    $conn = connectDataBase();
+                    $conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 					
                 	if(mysqli_connect_errno($conn))
                 	{
@@ -84,7 +32,7 @@
                 	}
                 	else
                 	{
-                		$stmt1 = $conn->prepare("SELECT user_id FROM Users WHERE username = ?");
+                		$stmt1 = $conn->prepare("SELECT user_id FROM Users WHERE name = ?");
 						$stmt1->bind_param("s", $user_check);
 						$stmt1->execute();
 						$stmt1->bind_result($userId);
@@ -124,51 +72,7 @@
         </div>
 
 
-        <!-- Trigger the modal with a button -->
-        <button id="addContactModal" name="addContactModal" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Add Contact</button>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add Contact</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form action="javascript:addContact();" method="POST">
-                            <div class="form-group">
-                                <label>Name:</label>
-                                <input id="contact_name" name="contact_name" type="text" class="form-control" placeholder="Enter contact name" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email:</label>
-                                <input id="contact_email" name="contact_email" type="text" class="form-control" placeholder="Enter contact email">
-                            </div>
-                            <div class="form-group"> <!-- There is probably a better way to do this -->
-                                <label>Phone:</label>
-                                <input id="contact_phone" name="contact_phone" type="number" class="form-control" placeholder="Enter contact phone number">
-                            </div>
-                            <div class="form-group"> <!-- There is probably a better way to do this -->
-                                <label>Address:</label>
-                                <input id="contact_address" name="contact_address" type="text" class="form-control" placeholder="Enter contact address">
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" onclick="javascript:window.location.reload()" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-
-<script>
+    <script>
 
 
 function searchList() {
