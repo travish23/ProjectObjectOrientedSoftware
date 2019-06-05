@@ -1,4 +1,4 @@
-var urlBase = 'http://contactmanager.site/LAMPAPI';
+var urlBase = 'http://contactmanager.site/ProjectObjectOritentedSoftware/API';
 var extension = "php";
 
 var current_user_ID = 0;
@@ -120,7 +120,7 @@ function sendLogoutRequest(){
 	var request_object = new XMLHttpRequest();
 	
 	//sets that object to go to logout.php
-	var url = urlBase + 'logout.' + extension;
+	var url = urlBase + '/logout.' + extension;
 	request_object.open("GET", url);
 	
 	//sets current user to 0
