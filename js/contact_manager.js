@@ -46,7 +46,7 @@ function sendUsernameAndPassword(){
 	
 	if(response_object.state == 1){
 		//updates the current user variable to the person who just logged in
-		current_user_ID = response_object.user_ID;
+		current_user_ID = response_object.ID;
 		
 		window.location.replace("http://www.contactmanager.site/userContactsPage.html");
 			
@@ -246,13 +246,21 @@ function displayAllContacts(){
 	var json_payload = JSON.stringify(payload);
 	
 	var request_object = new XMLHttpRequest();
+	request_object.onreadystatechange = function() {
+		console.log("The response_object is " + request_object.responseText);
+		var response_object = JSON.parse(this.responseText);
+		//document.getElementById("demo").innerHTML = myArr[0]
+	
+	}
+	
 	
 	var url = urlBase + "/displayAllContactsForUser." + extension;
 	request_object.open("POST", url);
+	
 	request_object.send(json_payload);
 	
-	console.log("The response_object is " + request_object.responseText);
-	var response_object = JSON.parse(request_object.responseText);
+	//console.log("The response_object is " + request_object.responseText);
+	//var response_object = JSON.parse(request_object.responseText);
 	
 	displayTable(response_object.searchResults);
 }
