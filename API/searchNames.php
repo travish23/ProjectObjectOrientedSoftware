@@ -9,6 +9,8 @@
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
+	var_dump($input);
+	
 	// parse input data
 	$userID = $input["ID"];
 	$searchQuery = $input["search"];
