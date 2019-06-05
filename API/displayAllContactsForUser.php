@@ -12,7 +12,7 @@
 	echo "php input is: ";
 	var_dump($input);
 	
-	/* // parse input data
+	// parse input data
 	$userID = $input["ID"];
 
 	// initialize result variables
@@ -76,5 +76,5 @@
 	function sendInfo($searchResults)
 	{
 		returnJson('{"results":[' . json_encode($searchResults) . '], "error":""}');
-	} */
+	}
 ?>
