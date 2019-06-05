@@ -251,8 +251,8 @@ function displayAllContacts(){
 	request_object.open("POST", url);
 	request_object.send(json_payload);
 	
-	console.log("The response_object is " + request_object.response);
-	var response_object = JSON.parse(request_object.response);
+	console.log("The response_object is " + request_object.responseText);
+	var response_object = JSON.parse(request_object.responseText);
 	
 	displayTable(response_object.searchResults);
 }
