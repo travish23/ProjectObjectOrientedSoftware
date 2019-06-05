@@ -6,6 +6,7 @@
       <title>COP 4331</title>
       <link rel="stylesheet" type="text/css" href="ProjectObjectOrientedSoftware/HTML/css/style.css">
       <script type="text/javascript" src="ProjectObjectOrientedSoftware/js/index.js"></script>
+      <script type="text/javascript" src="js/login.js"></script>
 
    </head>
 
@@ -16,7 +17,7 @@
       <div id="loginBox">
 
          <!-- Login form -->
-         <form class="myForm" id="loginForm" action="LAMPAPI/login.php" method="POST">
+         <form class="myForm" id="loginForm" onsubmit="doLogin();" method="POST">
            <h2 id="register">Login</h2>
             <!-- Username element -->
             <div class="formGroup">
