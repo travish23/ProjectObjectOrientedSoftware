@@ -43,6 +43,7 @@
 	{
 		// add each element of the contact result
 		$contact[] = $row["contact_id"];
+		$contact[] = $row["owner_id"];
 		$contact[] = $row["name"];
 		$contact[] = $row["email"];
 		$contact[] = $row["phone"];
