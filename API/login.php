@@ -7,7 +7,7 @@
 	{
 	    
 		$usernameEntry = $obj["username"];
-		$passwordEntry = $obj["psw"];
+		$passwordEntry = $obj["password"];
     
 		$con = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 		
@@ -35,7 +35,6 @@
 			    $response = new \stdClass();
 			    $response->username = $usernameDB;
 			    $response->psw= $passwordDB;
-			    $response->user_id = $ID;
 			    $response->state = 2;
 			    echo json_encode($response);
 				exit();
@@ -51,8 +50,7 @@
 					    // Send JSON response
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
-        			    $response->psw = $passwordDB;
-				    $response->user_id = $ID;
+        			    $response->password= $passwordDB;
         			    $response->state = 1;
         			    echo json_encode($response);
 
@@ -67,7 +65,6 @@
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
         			    $response->psw= $passwordDB;
-			            $response->user_id = $ID;
         			    $response->state = 3;
         			    echo json_encode($response);
 					}
