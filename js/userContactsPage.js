@@ -103,7 +103,7 @@ function allowSelection(event)
 {
 	const row = event.target.parentNode;
 
-	if(row.id == "firstRow" || row.classList.contains("blankRow")
+	if(row.id == "firstRow" || row.classList.contains("blankRow"))
 		return;
 
 	if(!row.classList.contains("selected"))
