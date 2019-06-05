@@ -17,10 +17,10 @@ function updateApplication(event)
 // Called when submit button on login page is hit
 function doLogin()
 {
-	var username = document.getElementsByName("username")[0].value;
-	var password = document.getElementsByName("password")[0].value;
+	var username = document.getElementById("loginUser").value;
+	var password = document.getElementById("loginPass").value;
 	
-	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
+	var jsonPayload = '{"username" : "' + loginUser + '", "password" : "' + loginPass + '"}';
 	
 	var url = 'https://contactmanager.site/login.php';
 	//alert("Javascript");
