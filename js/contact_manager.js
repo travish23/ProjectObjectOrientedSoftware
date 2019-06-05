@@ -213,6 +213,7 @@ function sendSearchRequest(){
 	//creates an object with that value
 	var payload = { 
 		//ID: userID,
+		//CHANGED TO ONE FOR TESTING PURPOSES
 		ID: 1,
 		search: search_input
 	};
