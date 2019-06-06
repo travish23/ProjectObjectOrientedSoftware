@@ -44,7 +44,7 @@ $contact_id = $input["contact_id"];
 	//$conn = new mysqli("localhost", "root", "root", "mysql");
 	//echo "Hello!";
 	
-	
+	echo "php";
 	
 	if ($conn->connect_error) 
 	{
