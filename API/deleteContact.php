@@ -8,8 +8,6 @@
 
 $input = json_decode(file_get_contents('php://input'), true);
 
-var_dump($input);
-
 $contact_id = $input["contact_id"];
 
 
@@ -32,7 +30,7 @@ $contact_id = $input["contact_id"];
 	//$db = 'Contacts';
 	//$host = 'localhost';
 	//$port = 8889;
-
+	var_dump($conn);
 	//$link = mysqli_init();
 	//$conn = mysqli_real_connect(
    	//	$link,
