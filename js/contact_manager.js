@@ -262,6 +262,7 @@ function displayAllContacts(){
 
 		response_object = JSON.parse(this.responseText);
 		//document.getElementById("demo").innerHTML = myArr[0]
+		console.log("The parsed object is " + response_object);
 
 	}
 
@@ -273,7 +274,6 @@ function displayAllContacts(){
 	*/
 	//console.log("response_object[1][2] is " + response_object.results[1][2]);
 
-	console.log("The parsed object is " + response_object);
 
 	displayTable(response_object.searchResults);
 }
