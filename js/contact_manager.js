@@ -233,6 +233,19 @@ function sendSearchRequest(){
 
 	console.log("The response object is " + request_object.responseText);
 
+	var response_object;
+
+	request_object.onreadystatechange = function() {
+		console.log("(2)The response_object is " + request_object.responseText);
+
+		if(request_object.readyState === 4 && request_object.status === 200)
+		{
+			response_object = JSON.parse(this.responseText);
+			console.log("The parsed object is " + response_object.results[1]);
+			displayTable(response_object.results);
+		}
+	};
+
 	//TODO: Display results of the search
 
 }
