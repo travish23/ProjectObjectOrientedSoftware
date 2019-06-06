@@ -8,6 +8,7 @@
 
 		$usernameEntry = $obj["username"];
 		$passwordEntry = $obj["password"];
+    
 
 		$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 
@@ -25,7 +26,6 @@
 
 			$stmt->execute();
 
-			// TODO: add user_id to results
 			$stmt->bind_result($usernameDB, $passwordDB);
 			$stmt->store_result();
 
@@ -35,7 +35,7 @@
 				// Send JSON response
 			    $response = new \stdClass();
 			    $response->username = $usernameDB;
-			    $response->psw= $passwordDB;
+			    $response->password= $passwordDB;
 			    $response->state = 2;
 			    echo json_encode($response);
 				exit();
@@ -65,10 +65,9 @@
 						// Send JSON response
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
-        			    $response->psw= $passwordDB;
+        			    $response->password= $passwordDB;
         			    $response->state = 3;
         			    echo json_encode($response);
-									// echo $response;
 					}
 				}
 			}
