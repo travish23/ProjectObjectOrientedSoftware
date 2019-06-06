@@ -231,7 +231,7 @@ function sendSearchRequest(){
 	//sends a request with
 	request_object.send(json_payload);
 
-	console.log("The response object is " + request_object.response)
+	console.log("The response object is " + request_object.responseText);
 
 	//TODO: Display results of the search
 
