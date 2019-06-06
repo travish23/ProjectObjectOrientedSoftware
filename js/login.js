@@ -1,7 +1,7 @@
 var urlBase = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API';
 var extension = "php";
 
-function sendUsernameAndPassword(){
+function doLogin(){
 
 	console.log("Got into sendUsernameAndPassword()");
 
