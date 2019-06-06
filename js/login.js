@@ -43,9 +43,8 @@ function doLogin()
         //alert("we parsed");
 		
 	}//
-	
-//	catch(err)
-//	{
-//		alert(err.message);
-//	}
-//}
+		catch(err)
+	{
+	alert(err.message);
+	}
+}
