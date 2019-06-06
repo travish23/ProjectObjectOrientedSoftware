@@ -269,39 +269,6 @@ function displayAllContacts(){
 	request_object.send(json_payload);
 }
 
-function clearTable()
-{
-	var table = document.getElementById("contactTable");
-	var length = table.rows.length;
-	console.log(table.rows.length);
-	for (var i = 0; i < length; i++)
-	{
-		console.log(table.rows[i].id);
-		if(!table.rows[i].id == "firstRow")
-			table.removeChild(i);
-	}
-	console.log("after" + table.rows.length);
-
-	for (var i = 1; i <= 14; i++)
-	{
-		var row = table.insertRow(i);
-		row.classList.add("blankRow");
-
-		var cell0 = row.insertCell(0);
-		var cell1 = row.insertCell(1);
-		var cell2 = row.insertCell(2);
-		var cell3 = row.insertCell(3);
-		var cell4 = row.insertCell(4);
-
-		cell0.innerHTML = "";
-		cell1.innerHTML = "";
-		cell2.innerHTML = "";
-		cell3.innerHTML = "";
-		cell4.innerHTML = "";
-	}
-}
-
-
 function displayTable(contact_table_contents){
 
 	//0					 1				2			3			 4			5
@@ -350,4 +317,34 @@ function displayTable(contact_table_contents){
 		i++;
 	}
 
+}
+
+function clearTable()
+{
+	var old_tbody = document.getElementById("tableBody");
+	var new_tbody = document.createElement("tbody");
+	populate(new_tbody);
+	old_tbody.parentNode.replaceChild(new_tbody, old_tbody);
+	new_tbody.id = "tableBody";
+}
+
+populate(body)
+{
+	for (var i = 1; i <= 14; i++)
+	{
+		var row = document.getElementById("contactTable").insertRow(i);
+		row.classList.add("blankRow");
+
+		var cell0 = row.insertCell(0);
+		var cell1 = row.insertCell(1);
+		var cell2 = row.insertCell(2);
+		var cell3 = row.insertCell(3);
+		var cell4 = row.insertCell(4);
+
+		cell0.innerHTML = "";
+		cell1.innerHTML = "";
+		cell2.innerHTML = "";
+		cell3.innerHTML = "";
+		cell4.innerHTML = "";
+	}
 }
