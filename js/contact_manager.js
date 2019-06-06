@@ -230,8 +230,18 @@ function sendSearchRequest(){
 
 	//sends a request with
 	request_object.send(json_payload);
+	var response_object;
 
-	console.log("The response object is " + request_object.response)
+	request_object.onreadystatechange = function() {
+		console.log("(1)The response_object is " + this.responseText);
+
+		response_object = JSON.parse(this.responseText);
+		//document.getElementById("demo").innerHTML = myArr[0]
+
+	}
+
+
+	console.log("(2)The response object is " + response_object);
 
 	//TODO: Display results of the search
 
