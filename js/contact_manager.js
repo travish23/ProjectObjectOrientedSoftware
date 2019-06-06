@@ -276,7 +276,7 @@ function displayAllContacts(){
 	//console.log("response_object[1][2] is " + response_object.results[1][2]);
 
 
-	displayTable(response_object.searchResults);
+	displayTable(response_object.results);
 }
 
 
