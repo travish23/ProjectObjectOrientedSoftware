@@ -162,7 +162,11 @@ function sendDeleteRequest(){
 	console.log("Got into sendDeleteRequest()");
 
 	//TODO: figure out how to get contact ID from table
-	var contactId = document.querySelector(".selected").id;
+	var contact = document.querySelector(".selected");
+	if (contact == null)
+		return;
+
+	var contactId = contact.id;
 
 	var payload = {
 		contact_id: contactId,
