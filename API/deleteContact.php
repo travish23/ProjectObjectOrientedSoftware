@@ -5,92 +5,91 @@
  
 // $inData = getRequestInfo();
 
-echo "php";
-
-/* $input = json_decode(file_get_contents('php://input'), true);
+$input = json_decode(file_get_contents('php://input'), true);
 
 $contact_id = $input["contact_id"];
 
+echo $contact_id;
 
-//$mode = $inData["mode"];
-// $name = $inData["name"];
-// $phone = $inData["phone"];
-// $email = $inData["email"];
-// $address = $inData["address"];
-// $contact_id = $inData["contact_id"];
-//$self = $_SERVER['PHP_SELF'];
+// // $mode = $inData["mode"];
+// // $name = $inData["name"];
+// // $phone = $inData["phone"];
+// // $email = $inData["email"];
+// // $address = $inData["address"];
+// // $contact_id = $inData["contact_id"];
+// // $self = $_SERVER['PHP_SELF'];
 
-	//$color = $inData["color"];
-	// $userId = $inData["ID"];
+	// // $color = $inData["color"];
+	// // $userId = $inData["ID"];
 
 
 
-	$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
-	//$user = 'root';
-	//$password = 'root';
-	//$db = 'Contacts';
-	//$host = 'localhost';
-	//$port = 8889;
+	// $conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+	// // $user = 'root';
+	// // $password = 'root';
+	// // $db = 'Contacts';
+	// // $host = 'localhost';
+	// // $port = 8889;
 	
-	//$link = mysqli_init();
-	//$conn = mysqli_real_connect(
-   	//	$link,
-   	//	$host,
-   	//	$user,
-   	//	$password,
-   	//	$db,
-   	//	$port
-	//);
+	// // $link = mysqli_init();
+	// // $conn = mysqli_real_connect(
+   		// // $link,
+   		// // $host,
+   		// // $user,
+   		// // $password,
+   		// // $db,
+   		// // $port
+	// // );
 
-	//$conn = new mysqli("localhost", "root", "root", "mysql");
-	//echo "Hello!";
+	// // $conn = new mysqli("localhost", "root", "root", "mysql");
+	// // echo "Hello!";
 	
-	echo "php";
+	// echo "php";
 	
-	if ($conn->connect_error) 
-	{
-		//echo "Hello2";
-		returnWithError( $conn->connect_error );
-	} 
-	else
-	{
-		//echo "Hello3";
-		//$sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
+	// if ($conn->connect_error) 
+	// {
+		// // echo "Hello2";
+		// returnWithError( $conn->connect_error );
+	// } 
+	// else
+	// {
+		// // echo "Hello3";
+		// // $sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
 
-		$sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
+		// $sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
 		
-		echo "sql is";
-		echo $sql;
+		// echo "sql is";
+		// echo $sql;
 		
-		$result = $conn->query($sql)
+		// $result = $conn->query($sql)
 		
-		// if(  != TRUE )
-		// {
-			// returnWithError( $conn->error );
-		// }
+		// // if(  != TRUE )
+		// // {
+			// // returnWithError( $conn->error );
+		// // }
 		
-		echo "result is";
-		echo $result;
-		$conn->close();
-	}
+		// echo "result is";
+		// echo $result;
+		// $conn->close();
+	// }
 	
-	returnWithError("");
+	// returnWithError("");
 	
-	function getRequestInfo()
-	{
-		// return json_decode(file_get_contents('php://input'), true);
-	}
+	// function getRequestInfo()
+	// {
+		// // return json_decode(file_get_contents('php://input'), true);
+	// }
 
-	function sendResultInfoAsJson( $obj )
-	{
-		header('Content-type: application/json');
-		// echo $obj;
-	}
+	// function sendResultInfoAsJson( $obj )
+	// {
+		// header('Content-type: application/json');
+		// // echo $obj;
+	// }
 	
-	function returnWithError( $err )
-	{
-		$retValue = '{"error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
-	}
- */
+	// function returnWithError( $err )
+	// {
+		// $retValue = '{"error":"' . $err . '"}';
+		// sendResultInfoAsJson( $retValue );
+	// }
+
 ?>
