@@ -227,9 +227,6 @@ function sendSearchRequest(){
 
 	//Sets that object to send stuff to the searchNames.php file
 	var url = urlBase + '/searchNames.' + extension;
-	request_object.open("POST", url);
-	request_object.send(json_payload);
-
 	console.log("(1)The response object is " + request_object.responseText);
 
 	var response_object;
@@ -245,6 +242,8 @@ function sendSearchRequest(){
 			return;
 		}
 	};
+	request_object.open("POST", url);
+	request_object.send(json_payload);
 
 	//TODO: Display results of the search
 
