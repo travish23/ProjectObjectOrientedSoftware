@@ -249,10 +249,16 @@ function displayAllContacts(){
 
 
 	var request_object = new XMLHttpRequest();
+	var url = urlBase + "/displayAllContactsForUser." + extension;
+
+	request_object.open("POST", url);
+	request_object.send(json_payload);
+
+	console.log("(1)The response_object is " + request_object.responseText);
 	var response_object;
 
 	request_object.onreadystatechange = function() {
-		console.log("The response_object is " + request_object.responseText);
+		console.log("(2)The response_object is " + request_object.responseText);
 
 		response_object = JSON.parse(this.responseText);
 		//document.getElementById("demo").innerHTML = myArr[0]
@@ -265,15 +271,10 @@ function displayAllContacts(){
 
 	}
 	*/
-	console.log("response_object[1][2] is " + response_object.results[1][2]);
+	//console.log("response_object[1][2] is " + response_object.results[1][2]);
 
 
-	var url = urlBase + "/displayAllContactsForUser." + extension;
-	request_object.open("POST", url);
 
-	request_object.send(json_payload);
-
-	console.log("The response_object is " + request_object.responseText);
 	//var response_object = JSON.parse(request_object.responseText);
 
 	displayTable(response_object.searchResults);
