@@ -9,40 +9,41 @@ $input = json_decode(file_get_contents('php://input'), true);
 
 $contact_id = $input["contact_id"];
 
-echo $contact_id;
 
-// // $mode = $inData["mode"];
-// // $name = $inData["name"];
-// // $phone = $inData["phone"];
-// // $email = $inData["email"];
-// // $address = $inData["address"];
-// // $contact_id = $inData["contact_id"];
-// // $self = $_SERVER['PHP_SELF'];
+// $mode = $inData["mode"];
+// $name = $inData["name"];
+// $phone = $inData["phone"];
+// $email = $inData["email"];
+// $address = $inData["address"];
+// $contact_id = $inData["contact_id"];
+// $self = $_SERVER['PHP_SELF'];
 
-	// // $color = $inData["color"];
-	// // $userId = $inData["ID"];
-
+	// $color = $inData["color"];
+	// $userId = $inData["ID"];
 
 
-	// $conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
-	// // $user = 'root';
-	// // $password = 'root';
-	// // $db = 'Contacts';
-	// // $host = 'localhost';
-	// // $port = 8889;
+
+	$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	
-	// // $link = mysqli_init();
-	// // $conn = mysqli_real_connect(
-   		// // $link,
-   		// // $host,
-   		// // $user,
-   		// // $password,
-   		// // $db,
-   		// // $port
-	// // );
+	echo "test";
+	// $user = 'root';
+	// $password = 'root';
+	// $db = 'Contacts';
+	// $host = 'localhost';
+	// $port = 8889;
+	
+	// $link = mysqli_init();
+	// $conn = mysqli_real_connect(
+   		// $link,
+   		// $host,
+   		// $user,
+   		// $password,
+   		// $db,
+   		// $port
+	// );
 
-	// // $conn = new mysqli("localhost", "root", "root", "mysql");
-	// // echo "Hello!";
+	// $conn = new mysqli("localhost", "root", "root", "mysql");
+	// echo "Hello!";
 	
 	// echo "php";
 	
