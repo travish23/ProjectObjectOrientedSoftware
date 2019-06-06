@@ -10,7 +10,7 @@
 	$input = json_decode(file_get_contents('php://input'), true);
 	
 	echo "input is ";
-	echo file_get_contents('php://input')
+	echo file_get_contents('php://input');
 	
 	// parse input data
 	$userID = $input["ID"];
