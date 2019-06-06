@@ -328,7 +328,7 @@ function clearTable()
 	new_tbody.id = "tableBody";
 }
 
-populate(body)
+function populate(body)
 {
 	for (var i = 1; i <= 14; i++)
 	{
