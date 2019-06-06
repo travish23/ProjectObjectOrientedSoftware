@@ -8,7 +8,7 @@
 	
 	echo "php";
 	
-	// collect input data
+	/* // collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
 	
@@ -80,5 +80,5 @@
 	function sendInfo($searchResults)
 	{
 		returnJson('{"results":[' . json_encode($searchResults) . '], "error":""}');
-	}
+	} */
 ?>
