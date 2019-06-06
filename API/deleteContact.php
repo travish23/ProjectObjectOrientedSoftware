@@ -30,7 +30,7 @@ $contact_id = $input["contact_id"];
 	//$db = 'Contacts';
 	//$host = 'localhost';
 	//$port = 8889;
-	var_dump($conn);
+	
 	//$link = mysqli_init();
 	//$conn = mysqli_real_connect(
    	//	$link,
@@ -44,8 +44,6 @@ $contact_id = $input["contact_id"];
 	//$conn = new mysqli("localhost", "root", "root", "mysql");
 	//echo "Hello!";
 	
-	echo "recieved id is ";
-	echo $contact_id;
 	
 	
 	if ($conn->connect_error) 
@@ -58,7 +56,9 @@ $contact_id = $input["contact_id"];
 		//echo "Hello3";
 		//$sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
 
-		$sql = "delete from Contacts WHERE contact_id='" . $contact_id . "'";
+		$sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
+		
+		echo $sql;
 		
 		// if( $result = $conn->query($sql) != TRUE )
 		// {
