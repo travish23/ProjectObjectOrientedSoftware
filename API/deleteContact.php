@@ -38,6 +38,10 @@ $inData = getRequestInfo();
 	//$conn = new mysqli("localhost", "root", "root", "mysql");
 	//echo "Hello!";
 	
+	echo "recieved id is ";
+	echo $inData;
+	
+	
 	if ($conn->connect_error) 
 	{
 		//echo "Hello2";
@@ -49,9 +53,6 @@ $inData = getRequestInfo();
 		//$sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
 
 		$sql = "delete * from Contacts WHERE contact_id='" . $inData . "'";
-		
-		echo "recieved id is ";
-		echo $inData;
 		
 		// if( $result = $conn->query($sql) != TRUE )
 		// {
