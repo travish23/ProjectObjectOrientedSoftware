@@ -7,7 +7,7 @@
 
 echo "php";
 
-$input = json_decode(file_get_contents('php://input'), true);
+/* $input = json_decode(file_get_contents('php://input'), true);
 
 $contact_id = $input["contact_id"];
 
@@ -92,5 +92,5 @@ $contact_id = $input["contact_id"];
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
-
+ */
 ?>
