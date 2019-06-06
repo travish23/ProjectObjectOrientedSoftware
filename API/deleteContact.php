@@ -48,6 +48,8 @@ $contact_id = $input["contact_id"];
 		// echo "Hello2";
 		returnWithError( $conn->connect_error );
 	}
+	
+	echo "hi";
 	// else
 	// {
 		// // echo "Hello3";
