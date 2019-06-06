@@ -45,7 +45,7 @@ $contact_id = $input["contact_id"];
 	
 	if ($conn->connect_error) 
 	{
-		// echo "Hello2";
+		echo "Hello2";
 		returnWithError( $conn->connect_error );
 	}
 	
