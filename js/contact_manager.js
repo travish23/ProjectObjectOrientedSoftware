@@ -164,6 +164,13 @@ function sendDeleteRequest(){
 	//TODO: figure out how to get contact ID from table
 	var contactId = document.querySelector(".selected").id;
 
+	var payload = {
+		contact_id: contactId,
+		};
+
+	//converts that object into  JSON object
+	var json_payload = JSON.stringify(payload);
+
 	//converts that object into  JSON object
 	console.log("contact id: " + contactId + " (" + typeof(contactId) + ")");
 
@@ -181,7 +188,7 @@ function sendDeleteRequest(){
 		}
 	};
 	request_object.open("POST", url);
-	request_object.send(contactId);
+	request_object.send(json_payload);
 }
 
 //sends a request to edit a specific contact and displays updated table
