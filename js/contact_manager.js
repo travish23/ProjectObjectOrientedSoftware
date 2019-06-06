@@ -34,8 +34,7 @@ function doLogin()
 					console.log("id: " + current_user_ID + " (" + typeof(current_user_ID) + ")");
 					console.log("hello1");
 				  window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage.html';
-					console.log("hello2");
-
+					displayAllContacts();
 				}
 				else{
 				    alert("Incorrect Username or Password");
@@ -89,7 +88,6 @@ function sendCreateNewAccountRequest(){
 	if(response_object.complete == 1){
 		current_user_ID = response_object.user_ID;
 		window.location.replace("http://www.contactmanager.site/userContactsPage.html");
-		displayAllContacts();
 	}
 	else{
 		document.getElementById("failMessage2").style.visibility = "visible";
