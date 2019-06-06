@@ -252,7 +252,9 @@ function sendSearchRequest(){
 			return;
 		}
 	};
+	console.log("01");
 	request_object.open("POST", url);
+	console.log("02");
 	request_object.send(json_payload);
 
 	//TODO: Display results of the search
