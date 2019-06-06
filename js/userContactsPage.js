@@ -15,7 +15,6 @@ function showDeleteForm()
 {
 	hideOrShow("deleteForm", true);
 	hideOrShow("contactForm", false);
-	hideOrShow("searchBtn", false);
 	hideOrShow("addContactBtn", false);
 	hideOrShow("editContactBtn", false);
 	hideOrShow("deleteContactBtn", false);
@@ -28,7 +27,6 @@ function showDeleteForm()
 function cancelDeleteContact()
 {
 	hideOrShow("deleteForm", false);
-	hideOrShow("searchBtn", true);
 	hideOrShow("addContactBtn", true);
 	hideOrShow("editContactBtn", true);
 	hideOrShow("deleteContactBtn", true);
@@ -47,7 +45,6 @@ function showEditForm()
 {
 	hideOrShow("editForm", true);
 	hideOrShow("contactForm", false);
-	hideOrShow("searchBtn", false);
 	hideOrShow("addContactBtn", false);
 	hideOrShow("editContactBtn", false);
 	hideOrShow("deleteContactBtn", false);
@@ -60,7 +57,6 @@ function showEditForm()
 function cancelEditContact()
 {
 	hideOrShow("editForm", false);
-	hideOrShow("searchBtn", true);
 	hideOrShow("addContactBtn", true);
 	hideOrShow("editContactBtn", true);
 	hideOrShow("deleteContactBtn", true);
