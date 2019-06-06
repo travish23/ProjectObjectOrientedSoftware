@@ -264,19 +264,9 @@ function displayAllContacts(){
 		{
 			response_object = JSON.parse(this.responseText);
 			console.log("The parsed object is " + response_object.results[0]);
+			displayTable(response_object.results);
 		}
 	};
-
-	console.log("we made it");
-	/*
-	for(i = 0; i < response_object.length; i++){
-
-	}
-	*/
-	//console.log("response_object[1][2] is " + response_object.results[1][2]);
-
-
-	displayTable(response_object.results);
 }
 
 
