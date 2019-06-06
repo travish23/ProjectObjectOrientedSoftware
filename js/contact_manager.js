@@ -262,7 +262,7 @@ function displayAllContacts(){
 
 		response_object = JSON.parse(this.responseText);
 		//document.getElementById("demo").innerHTML = myArr[0]
-		console.log("The parsed object is " + response_object);
+		console.log("The parsed object is " + response_object.results[0]);
 
 	}
 
