@@ -58,10 +58,13 @@ $contact_id = $input["contact_id"];
 
 		$sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
 		
-		if( $result = $conn->query($sql) != TRUE )
-		{
-			returnWithError( $conn->error );
-		}
+		
+		$result = $conn->query($sql)
+		
+		// if(  != TRUE )
+		// {
+			// returnWithError( $conn->error );
+		// }
 		
 		echo "result is";
 		echo $result;
