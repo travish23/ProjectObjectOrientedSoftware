@@ -12,14 +12,11 @@ function doLogin()
 	alert("Javascript");
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", 'application/json; charset=UTF-8');
-	xhr.send(jsonPayload);
-
-	//try
-	//{
-		//xhr.send(jsonPayload);
-		//xhr.onreadystatechange = function() 
-		xhr.onload = function()
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.send(jsonPayload);
+		xhr.onreadystatechange = function() 
 		{
 			
 		
