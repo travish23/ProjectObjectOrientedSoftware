@@ -272,14 +272,15 @@ function displayAllContacts(){
 
 function displayTable(contact_table_contents){
 
+	//contactID, ownerID, name, email, phone, address
 	var number_of_contacts = contact_table_contents.length;
 
 	var i;
 	var rows = document.querySelectorAll(".blankRow");
-	var categories = rows[0].children;
-	rows[0].classList.remove("blankRow");
+	var categories = rows[1].children;
+	rows[1].classList.remove("blankRow");
 
-	rows[0].setAttribute("id", contact_table_contents[0][0]);
+	rows[1].setAttribute("id", contact_table_contents[0][0]);
 
 	categories[0].innerHTML = contact_table_contents[0][1];
 	categories[1].innerHTML = contact_table_contents[0][2];
