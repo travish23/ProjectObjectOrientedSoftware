@@ -267,7 +267,7 @@ function displayAllContacts(){
 		}
 	};
 
-	var i;
+	console.log("we made it");
 	/*
 	for(i = 0; i < response_object.length; i++){
 
