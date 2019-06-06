@@ -56,7 +56,7 @@
 	// format a json to return searchResults
 	function sendInfo($searchResults)
 	{
-		returnJson('{"user_id":"' . $searchResults . '", "error":""}');
+		returnJson('{"user_id":"' . $searchResults . '", "error":"0"}');
 	}
 	
 ?>
