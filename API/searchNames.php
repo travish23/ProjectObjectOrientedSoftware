@@ -9,6 +9,8 @@
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
+	echo file_get_contents('php://input');
+	
 	// parse input data
 	$userID = $input["ID"];
 	$searchQuery = $input["search"];
@@ -27,6 +29,7 @@
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
 	$sql = "SELECT * FROM Contacts WHERE 
 		(name LIKE '%" . $searchQuery . "%') AND (owner_id = '" . $userID . "')";
+	
 	
 	$result = $con->query($sql);
 	
