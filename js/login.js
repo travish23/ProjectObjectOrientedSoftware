@@ -16,10 +16,12 @@ function doLogin()
 	xhr.onreadystatechange = function()
 		{
 
-		alert("test");
+		
 		    // Complete
 			if (xhr.readyState == 4 && xhr.status == 200)
 			{
+				
+				alert("test");
                			 var json = JSON.parse(xhr.responseText);
 
 
