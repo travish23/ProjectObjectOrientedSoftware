@@ -3,7 +3,12 @@
  //mysql_connect("localhost", "luua4y2c74pm", "@Contact4331") or die(mysql_error()); 
  //mysql_select_db("Cop4331Project1") or die(mysql_error()); 
  
-$inData = getRequestInfo();
+// $inData = getRequestInfo();
+
+$input = json_decode(file_get_contents('php://input'), true);
+
+$contact_id = $input["contact_id"];
+
 
 //$mode = $inData["mode"];
 // $name = $inData["name"];
@@ -39,7 +44,7 @@ $inData = getRequestInfo();
 	//echo "Hello!";
 	
 	echo "recieved id is ";
-	echo $inData;
+	echo $contact_id;
 	
 	
 	if ($conn->connect_error) 
@@ -52,7 +57,7 @@ $inData = getRequestInfo();
 		//echo "Hello3";
 		//$sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
 
-		$sql = "delete from Contacts WHERE contact_id='" . $inData . "'";
+		$sql = "delete from Contacts WHERE contact_id='" . $contact_id . "'";
 		
 		// if( $result = $conn->query($sql) != TRUE )
 		// {
