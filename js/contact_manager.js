@@ -24,7 +24,7 @@ function doLogin()
         var json = JSON.parse(xhr.responseText);
 				// Passwords matched
 				if(json.error == "0") {
-				
+
 					window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage.html';
 				}
 				else{
@@ -162,6 +162,23 @@ function sendDeleteRequest(){
 	console.log("Got into sendDeleteRequest()");
 
 	//TODO: figure out how to get contact ID from table
+	var contactId = document.querySelector(".selected").id;
+
+	var xml = new XMLHttpRequest();
+	var url = urlBase + "deleteContact." + extension;
+
+	var response_object;
+	xml.onreadystatechange() = function()
+	{
+		if(xml.readyState === 4 && xml.status === 200)
+		{
+			console.log("response: " + xml.responseText);
+			displayAllContacts();
+		}
+	}
+	xml.open("POST", url);
+	xml.send(contactId);
+
 	//TODO: send an XML HTTP request with that contact ID
 	//TODO: display updated contact list
 }

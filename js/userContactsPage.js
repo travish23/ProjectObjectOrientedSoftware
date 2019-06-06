@@ -21,7 +21,7 @@ function showDeleteForm()
 
 	const table = document.querySelector("#contactTable");
 
-	table.addEventListener("click", allowSelection);
+	table.addEventListener("click", allowEditSelection);
 }
 
 function cancelDeleteContact()
@@ -38,7 +38,7 @@ function cancelDeleteContact()
 			rows[i].classList.remove("selected");
 	}
 
-	document.querySelector("#contactTable").removeEventListener("click", allowSelection);
+	document.querySelector("#contactTable").removeEventListener("click", allowEditSelection);
 }
 
 function showEditForm()
@@ -71,20 +71,6 @@ function cancelEditContact()
 function cancelSearch()
 {
 	document.getElementById("search").value = "";
-}
-
-function allowSelection(event)
-{
-	const row = event.target.parentNode;
-
-	if(row.id == "firstRow" || row.classList.contains("blankRow"))
-		return;
-
-	if(!row.classList.contains("selected"))
-		row.classList.add("selected");
-	else {
-		row.classList.remove("selected");
-	}
 }
 
 function allowEditSelection(event)
