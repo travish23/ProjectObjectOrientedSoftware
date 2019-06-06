@@ -22,7 +22,7 @@ function doLogin()
 	
 	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 	
-	var url = 'https://contactmanager.site/ProjectOjectOrientedSoftware/login.php';
+	var url = 'http://contactmanager.site/ProjectOjectOrientedSoftware/login.php';
 	//alert("Javascript");
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
