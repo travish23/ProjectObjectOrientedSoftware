@@ -28,8 +28,8 @@ function doLogin()
 	firstName = "";
 	lastName = "";
 	
-	var username = document.getElementByName("loginUser").value;
-	var password = document.getElementByName("loginPass").value;
+	var username = document.getElementById("loginUser").value;
+	var password = document.getElementById("loginPass").value;
 	
 	document.getElementById("loginResult").innerHTML = "";
 	
