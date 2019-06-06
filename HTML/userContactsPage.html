@@ -55,7 +55,7 @@
 
 					<!-- ADD CONTACT FORM -->
 
-					<form class="myForm" id="contactForm" onsubmit="addContact();" style="display:none; visibility:hidden;">
+					<form class="myForm" id="contactForm" onsubmit="addContact();return false" style="display:none; visibility:hidden;">
 
 						<div class="formGroup">
 							<label for="name">First name</label>
@@ -94,7 +94,7 @@
 
 					<!-- DELETE FORM -->
 
-					<form class="myForm" id="deleteForm" onsubmit="sendDeleteRequest();" style="display:none; visibility:hidden;">
+					<form class="myForm" id="deleteForm" onsubmit="sendDeleteRequest();return false" style="display:none; visibility:hidden;">
 
 						<p>Please select the contact(s) to be deleted.</p>
 
@@ -107,7 +107,7 @@
 
 					<!-- EDIT FORM -->
 
-					<form class="myForm" id="editForm" onsubmit="sendEditRequest();" style="display:none; visibility:hidden;">
+					<form class="myForm" id="editForm" onsubmit="sendEditRequest();return false" style="display:none; visibility:hidden;">
 
 						<p>Please select the contact to be edited.</p>
 

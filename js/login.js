@@ -22,6 +22,7 @@ function doLogin()
 
 				console.log("json = "  + json + " (" + typeof(json) + ")");
 				console.log("json.error = "  + json.error + " (" + typeof(json.error) + ")");
+				console.log("json.user_id = "  + json.user_id + " (" + typeof(json.user_id) + ")");
 				// Passwords matched
 				if(json.error == 0) {
 

@@ -148,16 +148,15 @@ function sendAddContactRequest(){
 	var state = getElementById("state").value;
 	var zip = getElementById("zip").value;
 
+	var name = first_name + " " + last_name;
 	var address = street + " " + city + "," + state + " " + zip;
 
 	// creates an object, and stores the values given into it
 	var payload = {
-		operation: "add",
-		first_name: first_name,
-		last_name: last_name,
-		address: address,
-		phone_number: phone_number,
-		email: email
+		name: name,
+		phone: phone_number,
+		email: email,
+		address: address
 		};
 
 	//converts that object into  JSON object
@@ -165,19 +164,18 @@ function sendAddContactRequest(){
 
 	console.log("The json payload is " + json_payload);
 
-	//creates the XML HTTP Request object
 	var request_object = new XMLHttpRequest();
-
-
-	//Set the XML HTTP Request Object to send stuff to the addContact.php file
 	var url = urlBase + '/addContact.' + extension;
+
+	request_object.onreadystatechange = function() {
+		if(request_object.readyState === 4 && request_object.status === 200)
+		{
+			displayAllContacts();
+			return;
+		}
+	};
 	request_object.open("POST", url);
-
-	//send the contact information to the addContact.php file
 	request_object.send(json_payload);
-
-	//TODO: display updated contact list
-
 
 }
 
