@@ -21,6 +21,7 @@ function doLogin()
 			{
         var json = JSON.parse(xhr.responseText);
 
+				console.log("json = "  + json + " (" + typeof(json) + ")");
 				console.log("json.state = "  + json.state + " (" + typeof(json.state) + ")");
 				// Passwords matched
 				if(json.state == 1) {
