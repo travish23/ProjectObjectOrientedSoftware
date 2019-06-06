@@ -62,6 +62,8 @@ $contact_id = $input["contact_id"];
 		{
 			returnWithError( $conn->error );
 		}
+		
+		echo "result is";
 		echo $result;
 		$conn->close();
 	}
