@@ -1,7 +1,7 @@
 var urlBase = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API';
 var extension = "php";
 
-var current_user_ID = 0;
+var current_user_ID = 1;
 
 function doLogin()
 {
@@ -22,17 +22,9 @@ function doLogin()
 			if (xhr.readyState == 4 && xhr.status == 200)
 			{
         var json = JSON.parse(xhr.responseText);
-
-				console.log("json = "  + json + " (" + typeof(json) + ")");
-				console.log("json.error = "  + json.error + " (" + typeof(json.error) + ")");
-				console.log("json.user_id = "  + json.user_id + " (" + typeof(json.user_id) + ")");
 				// Passwords matched
 				if(json.error == "0") {
-					console.log("hello0");
-
-					current_user_ID = json.user_id;
-					console.log("id: " + current_user_ID + " (" + typeof(current_user_ID) + ")");
-
+				
 					window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage.html';
 				}
 				else{
@@ -228,10 +220,8 @@ function sendSearchRequest(){
 
 
 function displayAllContacts(){
-	console.log("user id: " + current_user_ID + " (" + typeof(current_user_ID) + ")");
 
-	//current_user_ID = 2;
-	var payload = {ID: current_user_ID};
+		var payload = {ID: current_user_ID};
 
 	var json_payload = JSON.stringify(payload);
 
