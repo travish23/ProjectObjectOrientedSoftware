@@ -207,7 +207,7 @@ function sendSearchRequest(){
 	console.log("Got into sendSearchRequest()");
 
 	//sets a variable to the search field
-	var search_input = getElementById("search").value;
+	var search_input = document.getElementById("search").value;
 	var userID = current_user_ID;
 
 	//creates an object with that value
