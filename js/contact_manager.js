@@ -88,8 +88,8 @@ function sendCreateNewAccountRequest(){
 
 	if(response_object.complete == 1){
 		current_user_ID = response_object.user_ID;
-
 		window.location.replace("http://www.contactmanager.site/userContactsPage.html");
+		displayAllContacts();
 	}
 	else{
 		document.getElementById("failMessage2").style.visibility = "visible";
