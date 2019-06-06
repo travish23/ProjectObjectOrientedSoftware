@@ -24,7 +24,7 @@ function doLogin()
 				
 				// Passwords matched
 				if(json.state == 1) {
-				    window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/contactmanager.php';
+				    window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
 				}
 				else{
 				    alert("Incorrect Username or Password");
