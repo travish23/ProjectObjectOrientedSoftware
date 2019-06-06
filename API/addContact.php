@@ -10,7 +10,6 @@ $name = $inData["name"];
 $phone = $inData["phone"];
 $email = $inData["email"];
 $address = $inData["address"];
-$contact_id = $inData["contact_id"];
 //$self = $_SERVER['PHP_SELF'];
 
 	//$color = $inData["color"];
@@ -45,11 +44,8 @@ $contact_id = $inData["contact_id"];
 	{
 		//echo "Hello3";
 		//$sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
-		$sql = "insert into Contacts (contact_id,name, phone, email, address) VALUES (" . $contact_id . ",'" . $name . "',
-			    																	'" . $phone . "',
-				    																'" . $email . "'
-					    															'" . $address . "')
-		      ";
+		$sql = "INSERT INTO Contacts (user_id, name , phone, email, address) 
+			VALUES (" . $user_id . ",'" . $name . "','" . $phone . "','" . $email . "''" . $address . "')";
 		
 		//if ($mode == "delete")
 		//{
