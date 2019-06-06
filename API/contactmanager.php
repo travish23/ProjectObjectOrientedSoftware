@@ -18,12 +18,13 @@
 	 
     }
 
-include("../HTML/userContactsPage.html");
+
 ?>
 
 
 				
                     <?php
+include("../HTML/userContactsPage.html");
                     $conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 					
                 	if(mysqli_connect_errno($conn))
