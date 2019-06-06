@@ -35,7 +35,7 @@
 				// Send JSON response
 			    $response = new \stdClass();
 			    $response->username = $usernameDB;
-			    $response->psw= $passwordDB;
+			    $response->password= $passwordDB;
 			    $response->state = 2;
 			    echo json_encode($response);
 				exit();
@@ -65,7 +65,7 @@
 						// Send JSON response
 					    $response = new \stdClass();
         			    $response->username = $usernameDB;
-        			    $response->psw= $passwordDB;
+        			    $response->password= $passwordDB;
         			    $response->state = 3;
         			    echo json_encode($response);
 					}
