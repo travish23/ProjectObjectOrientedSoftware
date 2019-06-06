@@ -9,7 +9,7 @@
 	
 	echo "php";
 	
-	// collect input data
+	/* // collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
 	echo $input;
@@ -58,6 +58,6 @@
 	function sendInfo($searchResults)
 	{
 		returnJson('{"user_id":"' . $searchResults . '", "error":""}');
-	}
+	} */
 	
 ?>
