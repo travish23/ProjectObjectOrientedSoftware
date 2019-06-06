@@ -33,8 +33,9 @@ function doLogin()
 					current_user_ID = json.user_id;
 					console.log("id: " + current_user_ID + " (" + typeof(current_user_ID) + ")");
 					console.log("hello1");
-				  window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage.html';
-					displayAllContacts();
+					redirect(displayAllContacts);
+				  // window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage.html';
+					// displayAllContacts();
 				}
 				else{
 				    alert("Incorrect Username or Password");
@@ -44,6 +45,12 @@ function doLogin()
 		xhr.open("POST", url, true);
 		xhr.send(jsonPayload);
 }
+function redirect(callback)
+{
+	window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage.html';
+	callback();
+}
+
 
 
 //sends request to create new account with username and password. Displays failure or success
