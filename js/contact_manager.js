@@ -278,23 +278,23 @@ function clearTable()
 			table.deleteRow(i);
 	}
 
-	for (var i = 1; i <= 14; i++)
-	{
-		var row = table.insertRow(i);
-		row.classList.add("blankRow");
-
-		var cell0 = row.insertCell(0);
-		var cell1 = row.insertCell(1);
-		var cell2 = row.insertCell(2);
-		var cell3 = row.insertCell(3);
-		var cell4 = row.insertCell(4);
-
-		cell0.innerHTML = "";
-		cell1.innerHTML = "";
-		cell2.innerHTML = "";
-		cell3.innerHTML = "";
-		cell4.innerHTML = "";
-	}
+	// for (var i = 1; i <= 14; i++)
+	// {
+	// 	var row = table.insertRow(i);
+	// 	row.classList.add("blankRow");
+	//
+	// 	var cell0 = row.insertCell(0);
+	// 	var cell1 = row.insertCell(1);
+	// 	var cell2 = row.insertCell(2);
+	// 	var cell3 = row.insertCell(3);
+	// 	var cell4 = row.insertCell(4);
+	//
+	// 	cell0.innerHTML = "";
+	// 	cell1.innerHTML = "";
+	// 	cell2.innerHTML = "";
+	// 	cell3.innerHTML = "";
+	// 	cell4.innerHTML = "";
+	// }
 }
 
 
