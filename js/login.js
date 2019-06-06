@@ -22,9 +22,9 @@ function doLogin()
         var json = JSON.parse(xhr.responseText);
 
 				console.log("json = "  + json + " (" + typeof(json) + ")");
-				console.log("json.state = "  + json.state + " (" + typeof(json.state) + ")");
+				console.log("json.error = "  + json.error + " (" + typeof(json.error) + ")");
 				// Passwords matched
-				if(json.state == 1) {
+				if(json.error == 0) {
 
 					console.log("test");
 				    window.location.href = 'http://contactmanager.site/ProjectOjectOrientedSoftware/API/contactmanager.php';
