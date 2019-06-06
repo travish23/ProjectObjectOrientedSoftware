@@ -224,7 +224,7 @@ function sendSearchRequest(){
 
 
 function displayAllContacts(){
-	console.log("user id: " + current_user_ID);
+	console.log("user id: " + current_user_ID + " (" + typeof(current_user_ID) + ")";
 
 	var payload = {ID: current_user_ID};
 
