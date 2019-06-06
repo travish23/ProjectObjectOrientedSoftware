@@ -4,7 +4,8 @@
 	
 	// this script will return a json in the format of {"results":"", "error":""} 
 	// and results will be in a 2d array of contacts(rows) with columns: contact_id, name, email, phone, address
-	
+	include ("contactmanager.php");
+	include ("config.php");
 	session_start();
 	
 	echo "_session[user_id] is ";
