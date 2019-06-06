@@ -225,7 +225,6 @@ function sendSearchRequest(){
 
 function displayAllContacts(){
 
-	current_user_ID = 1;
 	var payload = {ID: current_user_ID};
 
 	var json_payload = JSON.stringify(payload);
