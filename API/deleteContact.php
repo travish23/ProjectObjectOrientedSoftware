@@ -25,7 +25,6 @@ $contact_id = $input["contact_id"];
 
 	$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	
-	echo "test";
 	// $user = 'root';
 	// $password = 'root';
 	// $db = 'Contacts';
@@ -42,10 +41,8 @@ $contact_id = $input["contact_id"];
    		// $port
 	// );
 
-	// $conn = new mysqli("localhost", "root", "root", "mysql");
-	// echo "Hello!";
-	
-	// echo "php";
+	$conn = new mysqli("localhost", "root", "root", "mysql");
+	echo "Hello!";
 	
 	// if ($conn->connect_error) 
 	// {
