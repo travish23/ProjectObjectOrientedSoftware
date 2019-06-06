@@ -3,8 +3,8 @@ function sendUsernameAndPassword(){
 	console.log("Got into sendUsernameAndPassword()");
 
 	//gets the elements given by the user and store them in variables
-	var name = document.getElementById("username").value;
-	var user_password = document.getElementById("password").value;
+	var name = document.getElementById("loginUser").value;
+	var user_password = document.getElementById("loginPass").value;
 
 	//creates an object out of those variables
 	var payload = {
