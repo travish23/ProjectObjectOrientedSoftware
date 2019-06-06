@@ -25,7 +25,7 @@ function doLogin()
 			{
 				console.log("(if) response: " + xhr.response);
                 var json = JSON.parse(xhr.response);
-
+			console.log(xhr.response);
 				// Passwords matched
 				if(json.state == 1) {
 				    window.location.href = 'https://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
