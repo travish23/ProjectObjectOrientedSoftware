@@ -1,24 +1,7 @@
 // This code can be adapted into the main javascript code
 
-function showSearchForm()
-{
-	hideOrShow("formsDiv", true);
-	hideOrShow("searchForm", true);
-	hideOrShow("contactForm", false);
-	hideOrShow("deleteForm", false);
-
-	//cancelDeleteContact();
-}
-
-function cancelSearch()
-{
-	hideOrShow("formsDiv", false);
-	hideOrShow("searchForm", false);
-}
-
 function showContactForm()
 {
-	hideOrShow("formsDiv", true);
 	hideOrShow("contactForm", true);
 	hideOrShow("searchForm", false);
 	hideOrShow("deleteForm", false);
@@ -28,13 +11,11 @@ function showContactForm()
 
 function cancelAddContact()
 {
-	hideOrShow("formsDiv", false);
 	hideOrShow("contactForm", false);
 }
 
 function showDeleteForm()
 {
-	hideOrShow("formsDiv", true);
 	hideOrShow("deleteForm", true);
 	hideOrShow("contactForm", false);
 	hideOrShow("searchForm", false);
@@ -50,7 +31,6 @@ function showDeleteForm()
 
 function cancelDeleteContact()
 {
-	hideOrShow("formsDiv", false);
 	hideOrShow("deleteForm", false);
 	hideOrShow("searchBtn", true);
 	hideOrShow("addContactBtn", true);
@@ -69,7 +49,6 @@ function cancelDeleteContact()
 
 function showEditForm()
 {
-	hideOrShow("formsDiv", true);
 	hideOrShow("editForm", true);
 	hideOrShow("contactForm", false);
 	hideOrShow("searchForm", false);
@@ -85,7 +64,6 @@ function showEditForm()
 
 function cancelEditContact()
 {
-	hideOrShow("formsDiv", false);
 	hideOrShow("editForm", false);
 	hideOrShow("searchBtn", true);
 	hideOrShow("addContactBtn", true);

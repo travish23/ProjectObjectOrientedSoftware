@@ -17,10 +17,6 @@
 
 			<div id="contactButtonsBox">
 
-				<!-- SEARCH BUTTON -->
-
-				<button type="button" class="button" id="searchBtn" onclick="showSearchForm();">Search</button>
-
 				<!-- ADD BUTTON -->
 
 				<button type="button" class="button" id="addContactBtn" onclick="showContactForm();">Add</button>
@@ -41,11 +37,11 @@
 
 			<div id="contactsBox">
 
-				<div id="formsDiv" style="display:none; visibility:hidden;">
+				<div id="formsDiv">
 
 					<!-- SEARCH FORM -->
 
-					<form class="myForm" id="searchForm" onsubmit="sendSearchRequest();return false" style="display:none; visibility:hidden;">
+					<form class="myForm" id="searchForm" onsubmit="sendSearchRequest();return false">
 
 						<div class="formGroup">
 							<input type="text" placeholder="Search contacts..." name="search" id="search">
