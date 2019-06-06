@@ -273,11 +273,7 @@ function displayAllContacts(){
 	*/
 	//console.log("response_object[1][2] is " + response_object.results[1][2]);
 
-
-
-	var response_array = JSON.parse(request_object.responseText);
-
-	console.log("The response_array is " + response_array);
+	console.log("The parsed object is " + response_object);
 
 	displayTable(response_object.searchResults);
 }
