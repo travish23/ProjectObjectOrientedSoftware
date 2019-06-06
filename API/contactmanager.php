@@ -4,7 +4,7 @@
     $user_check = $_SESSION['login_user'];
     if(!isset($_SESSION['login_user']))
     {
-        header("location: index.html");
+        header("location: ../HTML/userContactsPage.html");
         die();
     }
     if(!isset($_SESSION['searchFlag']))
