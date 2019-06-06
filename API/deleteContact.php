@@ -41,7 +41,8 @@ $contact_id = $input["contact_id"];
    		// $port
 	// );
 
-	$conn = new mysqli("localhost", "root", "root", "mysql");
+	/* $conn = new mysqli("localhost", "root", "root", "mysql");
+	
 	
 	// if ($conn->connect_error) 
 	// {
@@ -90,5 +91,5 @@ $contact_id = $input["contact_id"];
 		$retValue = '{"error":"' . $err . '"}';
 		sendResultInfoAsJson( $retValue );
 	}
-
+ */
 ?>
