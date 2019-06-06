@@ -7,10 +7,12 @@
 	//	-user_id, which will be an int: whatever the user_id of the user is, if the username and password match any user in the database
 	//	-error, which will be an int: 0 if the username and password match a user in the database, otherwise 1
 	
+	
+	echo file_get_contents('php://input');
+	
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
-	echo $input;
 	
 	// parse input data
 	$username = $input["username"];
@@ -36,9 +38,14 @@
 		return;
 	}
 	
+	echo "after error";
+	
 	$row = $result->fetch_assoc();
 	
 	$user_id = $row["user_id"];
+	
+	echo "user_id is ";
+	echo $user_id;
 	
 	// sends a json to what called this script
 	function returnJson($json)
