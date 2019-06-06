@@ -34,6 +34,7 @@
 	// return no results error if no results found
 	if ($result->num_rows < 1)
 	{
+		echo "in error";
 		sendError(1);
 		return;
 	}
