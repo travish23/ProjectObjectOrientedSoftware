@@ -1,3 +1,6 @@
+var urlBase = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API';
+var extension = "php";
+
 function sendUsernameAndPassword(){
 
 	console.log("Got into sendUsernameAndPassword()");
@@ -21,13 +24,15 @@ function sendUsernameAndPassword(){
 	var request_object = new XMLHttpRequest();
 
 	//Set the XML HTTP Request Object to send stuff to the Login.php file
-	var url = urlBase + '/testlogin.' + extension;
+	var url = urlBase + '/login.' + extension;
 	request_object.open("POST", url);
 
 	//send the username and password to the Login.php file
 	request_object.send(json_payload);
 
 	//creates an object to get information back
+	console.log("request_object.responseText = " + request_object.responseText);
+	
 	var response_object = JSON.parse(request_object.responseText);
 
 	console.log("The response object is " + request_object.responseText);
