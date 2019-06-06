@@ -10,9 +10,11 @@
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
+	echo $input;
+	
 	// parse input data
 	$username = $input["username"];
-	$password = $input["password"];
+	$password = $input["psw"];
 	
 	// try to connect to database
 	$con = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
