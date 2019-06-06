@@ -15,7 +15,7 @@ $address = $inData["address"];
 	//$color = $inData["color"];
 	$userId = $inData["ID"];
 
-	$conn = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+	$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	//$user = 'root';
 	//$password = 'root';
 	//$db = 'Contacts';
