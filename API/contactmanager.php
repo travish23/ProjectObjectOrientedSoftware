@@ -1,13 +1,13 @@
 <?php
-    include("config.php");
+
     //include("displayAllContactsForUser.php");
     session_start();
     $input = file_get_contents('php://input');
 
+    echo(user_id);
+    $user = $_SESSION['username']
 
-    $_SESSION['user_id'] = $input;
-
-    if(isset($_SESSION['user_id']))
+    if(isset($_SESSION['username']))
     {
         header("location: ../HTML/userContactsPage.html");
         die();
@@ -28,7 +28,7 @@
 	<head>
 		<title>Contacts</title>
 
-		<link rel="stylesheet" type="text/css" href="../HTML/css/userContactsPage.css">
+		<link rel="stylesheet" type="text/css" href="css/userContactsPage.css">
 		<script type="text/javascript" src="../js/userContactsPage.js" defer></script>
 		<script type="text/javascript" src="../js/contact_manager.js"></script>
 
