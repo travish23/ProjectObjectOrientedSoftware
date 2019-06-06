@@ -28,9 +28,9 @@ function sendUsernameAndPassword(){
 	request_object.send(json_payload);
 
 	//creates an object to get information back
-	var response_object = JSON.parse(request_object.response);
+	var response_object = JSON.parse(request_object.responseText);
 
-	console.log("The response object is " + request_object.response);
+	console.log("The response object is " + request_object.responseText);
 
 	if(response_object.state == 1){
 		//updates the current user variable to the person who just logged in
