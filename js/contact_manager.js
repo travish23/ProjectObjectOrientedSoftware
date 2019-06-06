@@ -278,6 +278,7 @@ function displayTable(contact_table_contents){
 	var number_of_contacts = contact_table_contents.length;
 	var i;
 	var rows = document.querySelectorAll(".blankRow");
+	var table = document.getElementById("contactTable");
 
 	for(i = 0; i < rows.length; i++){
 
@@ -296,7 +297,20 @@ function displayTable(contact_table_contents){
 
 	while(i < number_of_contacts)
 	{
+		var row = table.insertRow(i);
+		row.setAttribute("id", contact_table_contents[i][0]);
 
+		var cell0 = row.insertCell(0);
+		var cell1 = row.insertCell(1);
+		var cell2 = row.insertCell(2);
+		var cell3 = row.insertCell(3);
+		var cell4 = row.insertCell(4);
+
+		cell0.innerHTML = name[1];
+		cell1.innerHTML = name[0];
+		cell2.innerHTML = contact_table_contents[i][3];
+		cell3.innerHTML = contact_table_contents[i][4];
+		cell4.innerHTML = contact_table_contents[i][5];
 		i++;
 	}
 
