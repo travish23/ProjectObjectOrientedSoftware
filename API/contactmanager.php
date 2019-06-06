@@ -4,7 +4,7 @@
     session_start();
     $input = file_get_contents('php://input');
 
-    echo(user_id);
+    //echo(user_id);
     $user = $_SESSION['username']
 
     if(isset($_SESSION['username']))
