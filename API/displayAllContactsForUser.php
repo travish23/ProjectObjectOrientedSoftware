@@ -24,8 +24,9 @@
 		return;
 	}
 	
-	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
+	// creates a query to collect all the contact entries for the current user
 	$sql = "SELECT * FROM Contacts WHERE owner_id = '" . $userID . "'";
+	
 	
 	$result = $con->query($sql);
 	

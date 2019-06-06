@@ -6,12 +6,8 @@
 	// this script will return a json in the format of {"results":"", "error":""} 
 	// and results will be in a 2d array of contacts(rows) with columns: contact_id, name, email, phone, address
 	
-	
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
-	
-	echo "php input is: ";
-	var_dump($input);
 	
 	// parse input data
 	$userID = $input["ID"];
@@ -19,7 +15,6 @@
 
 	// initialize result variables
 	$searchResults = array();
-	$contact = array();
 	
 	// try to connect to database
 	$con = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
@@ -31,7 +26,7 @@
 	
 	// creates a query to collect all the contact entries for the current user that contain "searchQuery"
 	$sql = "SELECT * FROM Contacts WHERE 
-		(name LIKE '%" . $searchQuery . "%') AND (owner_id = " . $userID . ")";
+		(name LIKE '%" . $searchQuery . "%') AND (owner_id = '" . $userID . "')";
 	
 	$result = $con->query($sql);
 	
@@ -45,6 +40,7 @@
 	// loop through the hits
 	while($row = $result->fetch_assoc())
 	{
+		$contact = array();
 		// add each element of the contact result
 		$contact[] = $row["contact_id"];
 		$contact[] = $row["owner_id"];
