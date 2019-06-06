@@ -36,6 +36,9 @@
 		return;
 	}
 	
+	$row = $result->fetch_assoc();
+	
+	$user_id 
 	
 	
 	
