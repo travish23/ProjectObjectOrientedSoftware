@@ -38,9 +38,24 @@
 	
 	$row = $result->fetch_assoc();
 	
-	$user_id 
+	$user_id = $row["user_id"];
 	
-	
-	
+	// sends a json to what called this script
+	function returnJson($json)
+	{
+		echo $json;
+	}
+
+	// format a json to return an error
+	function sendError($error)
+	{
+		returnJson('{"user_id":"", "error":"' . $error . '"}');
+	}
+
+	// format a json to return searchResults
+	function sendInfo($searchResults)
+	{
+		returnJson('{"user_id":"' . $searchResults . '", "error":""}');
+	}
 	
 ?>
