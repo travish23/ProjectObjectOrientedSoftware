@@ -42,6 +42,9 @@
 	
 	$user_id = $row["user_id"];
 	
+	echo "user_id is ";
+	echo $user_id;
+	
 	// sends a json to what called this script
 	function returnJson($json)
 	{
