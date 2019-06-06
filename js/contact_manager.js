@@ -261,6 +261,7 @@ function displayAllContacts(){
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
 			response_object = JSON.parse(this.responseText);
+			console.log("hey" + response_object);
 			displayTable(response_object.results);
 			return;
 		}
