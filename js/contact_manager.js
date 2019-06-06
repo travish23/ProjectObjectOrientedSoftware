@@ -178,8 +178,6 @@ function sendDeleteRequest(){
 	var url = urlBase + '/deleteContact.' + extension;
 
 	request_object.onreadystatechange = function() {
-		console.log("(2)The response_object is " + request_object.responseText);
-
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
 			console.log("The object is " + request_object.responseText);
@@ -226,12 +224,9 @@ function sendSearchRequest(){
 	var response_object;
 
 	request_object.onreadystatechange = function() {
-		console.log("(2)The response_object is " + request_object.responseText);
-
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
 			response_object = JSON.parse(this.responseText);
-			console.log("The parsed object is " + response_object.results[0]);
 			displayTable(response_object.results);
 			return;
 		}
@@ -259,7 +254,6 @@ function displayAllContacts(){
 	request_object.onreadystatechange = function() {
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
-			console.log("response: " + request_object.responseText);
 			response_object = JSON.parse(this.responseText);
 			displayTable(response_object.results);
 			return;
