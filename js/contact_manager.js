@@ -261,7 +261,7 @@ function displayAllContacts(){
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
 			response_object = JSON.parse(this.responseText);
-			console.log("hey" + response_object);
+			console.log("hey" + response_object[0]);
 			displayTable(response_object.results);
 			return;
 		}
@@ -313,7 +313,7 @@ function displayTable(contact_table_contents){
 
 	//console.log()
 
-	for(i = 0; i < rows.length; i++){
+	for(i = 0; i < rows.length && i < number_of_contacts; i++){
 
 		var categories = rows[i].children;
 		var name = contact_table_contents[i][2].split(" ");
