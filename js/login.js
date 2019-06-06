@@ -18,55 +18,45 @@ function updateApplication(event)
 
 
 // Called when submit button on login page is hit
-var userId = 0;
-var firstName = "";
-var lastName = "";
-
 function doLogin()
 {
-	userId = 0;
-	firstName = "";
-	lastName = "";
-	
 	var username = document.getElementById("loginUser").value;
 	var password = document.getElementById("loginPass").value;
 	
-	document.getElementById("loginResult").innerHTML = "";
-	
-	var jsonPayload = '{"login" : "' + username + '", "password" : "' + password + '"}';
+	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 	
 	var url = 'http://contactmanager.site/login.php';
 	
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, false);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", 'application/json; charset=UTF-8');
 	try
 	{
 		xhr.send(jsonPayload);
-		
-		var jsonObject = JSON.parse( xhr.responseText );
-		
-		userId = jsonObject.id;
-		
-		if( userId < 1 )
+		xhr.onreadystatechange = function() 
 		{
-			document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-			return;
-		}
+		    // Complete
+			if (xhr.readyState == 4 && xhr.status == 200) 
+			{
+                		var json = JSON.parse(xhr.response);
+				
+				// Passwords matched
+				if(json.state == 1) {
+				    window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/contactmanager.php';
+				}
+				else{
+				    alert("Incorrect Username or Password");
+				}
+			}
+		};
+		alert(test);
+        	alert("after payload");
+        	alert("we parsed");
 		
-		firstName = jsonObject.firstName;
-		lastName = jsonObject.lastName;
-
-		document.getElementById("userName").innerHTML = firstName + " " + lastName;
-		
-		document.getElementById("loginName").value = "";
-		document.getElementById("loginPassword").value = "";
-		
-		
-	}
-	catch(err)
-	{
-		document.getElementById("loginResult").innerHTML = err.message;
 	}
 	
+	catch(err)
+	{
+		alert(err.message);
+	}
 }
