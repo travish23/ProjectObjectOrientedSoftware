@@ -7,6 +7,8 @@
 	//	-user_id, which will be an int: whatever the user_id of the user is, if the username and password match any user in the database
 	//	-error, which will be an int: 0 if the username and password match a user in the database, otherwise 1
 	
+	echo "php";
+	
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
