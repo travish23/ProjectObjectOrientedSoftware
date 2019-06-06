@@ -21,7 +21,6 @@
 		else
 		{
 			$stmt = $conn->prepare("SELECT name, password FROM Users WHERE name = ?");
-
 			$stmt->bind_param("s", $usernameEntry);
 
 			$stmt->execute();
