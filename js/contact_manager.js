@@ -37,6 +37,7 @@ function doLogin()
 					var url2 = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
 					http.onreadystatechange = function()
 					{
+						console.long(http.responseText);
 						window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
 					}
 					http.open("POST", url2, true);
