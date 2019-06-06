@@ -165,7 +165,7 @@ function sendDeleteRequest(){
 	var contactId = document.querySelector(".selected").id;
 
 	var xml = new XMLHttpRequest();
-	var url = urlBase + "deleteContact." + extension;
+	var url = urlBase + "/deleteContact." + extension;
 
 	var response_object;
 	xml.onreadystatechange = function()
