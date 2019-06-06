@@ -272,6 +272,7 @@ function displayAllContacts(){
 function clearTable()
 {
 	var table = document.getElementById("contactTable");
+	console.log(table.rows.length);
 	for (var i = 0; i < table.rows.length; i++)
 	{
 		if(!table.rows[i].id == "firstRow")
