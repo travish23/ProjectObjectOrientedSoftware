@@ -28,9 +28,14 @@ function doLogin()
 				console.log("json.user_id = "  + json.user_id + " (" + typeof(json.user_id) + ")");
 				// Passwords matched
 				if(json.error == "0") {
+					console.log("hello0");
+
 					current_user_ID = json.user_id;
 					console.log("id: " + current_user_ID + " (" + typeof(current_user_ID) + ")");
+					console.log("hello1");
 				  window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage.html';
+					console.log("hello2");
+
 				}
 				else{
 				    alert("Incorrect Username or Password");
