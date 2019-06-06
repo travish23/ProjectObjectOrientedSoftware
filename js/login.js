@@ -26,7 +26,7 @@ function doLogin(){
 	//Set the XML HTTP Request Object to send stuff to the Login.php file
 	var url = urlBase + '/testlogin.' + extension;
 
-	
+
 	var response_object;
 
 	request_object.onreadystatechange = function() {
@@ -40,14 +40,14 @@ function doLogin(){
 			return;
 		}
 	};
-	
+
 	request_object.open("POST", url);
 	//send the username and password to the Login.php file
 	request_object.send(json_payload);
 
 	//creates an object to get information back
 	console.log("request_object.responseText = " + request_object.responseText);
-	
+
 	var response_object = JSON.parse(request_object.responseText);
 
 	console.log("The response object is " + request_object.responseText);
@@ -56,7 +56,7 @@ function doLogin(){
 		//updates the current user variable to the person who just logged in
 		current_user_ID = response_object.ID;
 
-		window.location.replace("http://www.contactmanager.site/contactmanager.php");
+		window.location.replace("http://www.contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage");
 
 
 	}
