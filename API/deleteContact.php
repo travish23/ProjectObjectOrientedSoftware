@@ -44,7 +44,7 @@ $contact_id = $input["contact_id"];
 	//$conn = new mysqli("localhost", "root", "root", "mysql");
 	//echo "Hello!";
 	
-	
+	echo "php";
 	
 	if ($conn->connect_error) 
 	{
@@ -58,12 +58,18 @@ $contact_id = $input["contact_id"];
 
 		$sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
 		
+		echo "sql is";
 		echo $sql;
 		
-		// if( $result = $conn->query($sql) != TRUE )
+		$result = $conn->query($sql)
+		
+		// if(  != TRUE )
 		// {
 			// returnWithError( $conn->error );
 		// }
+		
+		echo "result is";
+		echo $result;
 		$conn->close();
 	}
 	
