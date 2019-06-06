@@ -164,23 +164,21 @@ function sendDeleteRequest(){
 	//TODO: figure out how to get contact ID from table
 	var contactId = document.querySelector(".selected").id;
 
-	var xml = new XMLHttpRequest();
-	var url = urlBase + "/deleteContact." + extension;
+	var request_object = new XMLHttpRequest();
+	var url = urlBase + '/searchNames.' + extension;
 
-	var response_object;
-	xml.onreadystatechange = function()
-	{
-		if(xml.readyState === 4 && xml.status === 200)
+	request_object.onreadystatechange = function() {
+		console.log("(2)The response_object is " + request_object.responseText);
+
+		if(request_object.readyState === 4 && request_object.status === 200)
 		{
-			console.log("response: " + xml.responseText);
-			displayAllContacts();
+			console.log("The object is " + request_object.responseText);
+			displayTable(response_object.results);
+			return;
 		}
-	}
-	xml.open("POST", url);
-	xml.send(contactId);
-
-	//TODO: send an XML HTTP request with that contact ID
-	//TODO: display updated contact list
+	};
+	request_object.open("POST", url);
+	request_object.send(contactId);
 }
 
 //sends a request to edit a specific contact and displays updated table
