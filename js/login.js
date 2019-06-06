@@ -36,7 +36,7 @@ function sendUsernameAndPassword(){
 		//updates the current user variable to the person who just logged in
 		current_user_ID = response_object.ID;
 
-		window.location.replace("http://www.contactmanager.site/userContactsPage.html");
+		window.location.replace("http://www.contactmanager.site/contactmanager.php");
 
 
 	}
