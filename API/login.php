@@ -8,7 +8,7 @@
 
 		$usernameEntry = $obj["username"];
 		$passwordEntry = $obj["password"];
-    echo('username');
+    
 
 		$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 
