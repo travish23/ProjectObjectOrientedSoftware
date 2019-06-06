@@ -261,9 +261,6 @@ function displayAllContacts(){
 	var request_object = new XMLHttpRequest();
 	var url = urlBase + "/displayAllContactsForUser." + extension;
 
-	request_object.open("POST", url);
-	request_object.send(json_payload);
-
 	var response_object;
 
 	request_object.onreadystatechange = function() {
@@ -274,6 +271,8 @@ function displayAllContacts(){
 			return;
 		}
 	};
+	request_object.open("POST", url);
+	request_object.send(json_payload);
 }
 
 
