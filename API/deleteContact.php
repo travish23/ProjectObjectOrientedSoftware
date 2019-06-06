@@ -71,7 +71,7 @@ $inData = getRequestInfo();
 	function sendResultInfoAsJson( $obj )
 	{
 		header('Content-type: application/json');
-		echo $obj;
+		// echo $obj;
 	}
 	
 	function returnWithError( $err )
