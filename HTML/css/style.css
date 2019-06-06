@@ -33,6 +33,7 @@ h2
   font-size: 2em;
   color: #FFF;
   margin-top: 10px;
+  text-shadow: 1px 1px #24305E;
 }
 a[class="button"]
 {
