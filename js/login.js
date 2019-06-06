@@ -10,17 +10,15 @@ function doLogin()
 	var url = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/login.php';
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	xhr.send(jsonPayload);
+
 	xhr.onreadystatechange = function()
 		{
 
-		
+
 		    // Complete
 			if (xhr.readyState == 4 && xhr.status == 200)
 			{
-				
+
 				alert("test");
                			 var json = JSON.parse(xhr.responseText);
 
@@ -36,7 +34,10 @@ function doLogin()
 				}
 			}
 		}
-		
+		xhr.open("POST", url, true);
+		xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+		xhr.send(jsonPayload);
+
 		//alert(test);
         //alert("after payload");
         //var test = JSON.parse(xhr.response);
