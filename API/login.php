@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	$_SESSION = array();
-	$obj = json_decode(file_get_contents('php://input'), true);
+	$obj = json_decode(file_get_contents('php://input'));
     //var_dump(obj);
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
@@ -46,9 +46,9 @@
 			if ($stmt->num_rows() < 1)
 			{
 				// Send JSON response
-			    $response = new \stdClass();
-			    $response->username = $usernameDB;
-			    $response->psw= $passwordDB;
+			    //$response = new \stdClass();
+			    //$response->username = $usernameDB;
+			    //$response->psw= $passwordDB;
 			    $response->state = 2;
 			    echo json_encode($response);
 				exit();
@@ -62,15 +62,15 @@
 					if (password_verify($passwordEntry, $row['password']))
 					{
 					    // Send JSON response
-					    $response = new \stdClass();
-        			    $response->username = $usernameDB;
-        			    $response->password= $passwordDB;
+					 //   $response = new \stdClass();
+        			    //$response->username = $usernameDB;
+        			    //$response->password= $passwordDB;
         			    $response->state = 1;
         			    echo json_encode($response);
 
         			    
 						$_SESSION['login_user'] = $usernameDB;
-						//header("location: contact_manager.php");
+						header("location: contact_manager.php");
 					}
 					// Incorrect Password
 					else
