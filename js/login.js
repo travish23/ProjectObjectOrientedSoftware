@@ -49,7 +49,7 @@ function doLogin()
 				}
 			}
 		};
-		alert(test);
+		//alert(test);
         	alert("after payload");
         	alert("we parsed");
 		
