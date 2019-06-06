@@ -168,7 +168,7 @@ function sendDeleteRequest(){
 	var url = urlBase + "deleteContact." + extension;
 
 	var response_object;
-	xml.onreadystatechange() = function()
+	xml.onreadystatechange = function()
 	{
 		if(xml.readyState === 4 && xml.status === 200)
 		{
