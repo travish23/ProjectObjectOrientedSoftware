@@ -180,7 +180,7 @@ function sendDeleteRequest(){
 	request_object.onreadystatechange = function() {
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
-			console.log("The object is " + request_object.responseText);
+			console.log("Response: " + request_object.responseText);
 			displayAllContacts();
 			return;
 		}
