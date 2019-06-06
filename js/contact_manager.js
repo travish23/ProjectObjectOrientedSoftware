@@ -330,9 +330,9 @@ function clearTable()
 
 function populate(body)
 {
-	for (var i = 1; i <= 14; i++)
+	for (var i = 0; i < 14; i++)
 	{
-		var row = document.getElementById("contactTable").insertRow(i);
+		var row = body.insertRow(i);
 		row.classList.add("blankRow");
 
 		var cell0 = row.insertCell(0);
