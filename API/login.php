@@ -1,4 +1,5 @@
 <?php
+	header('Access-Control-Allow-Origin: *');
 	session_start();
 	$_SESSION = array();
 	$obj = json_decode(file_get_contents('php://input'));
