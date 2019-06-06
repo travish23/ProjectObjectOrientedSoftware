@@ -1,3 +1,21 @@
+function checkForUpdate()
+{
+    if (window.applicationCache !== undefined && window.applicationCache !== null)
+    {
+        window.applicationCache.addEventListener('updateready', updateApplication);
+    }
+}
+
+function updateApplication(event)
+{
+    if (window.applicationCache.status != 4) return;
+    window.applicationCache.removeEventListener('updateready', updateApplication);
+    window.applicationCache.swapCache();
+    window.location.reload();
+}
+
+
+
 
 // Called when submit button on login page is hit
 function doLogin()
@@ -7,28 +25,25 @@ function doLogin()
 
 	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 
-	var url = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/login.php';
+	var url = 'http://contactmanager.site/ProjectObjectOriented/API/login.php';
 	//alert("Javascript");
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url);
+	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", 'application/json; charset=UTF-8');
-	console.log("try");
 	try
 	{
 		xhr.send(jsonPayload);
-		console.log("after try");
+
 		xhr.onreadystatechange = function()
 		{
-			console.log("response: " + xhr.response);
 		    // Complete
 			if (xhr.readyState == 4 && xhr.status == 200)
 			{
-				console.log("(if) response: " + xhr.response);
                 var json = JSON.parse(xhr.response);
-			console.log(xhr.response);
+                console.console.log(xhr.response);
 				// Passwords matched
 				if(json.state == 1) {
-				    window.location.href = 'https://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
+				    window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
 				}
 				else{
 				    alert("Incorrect Username or Password");
