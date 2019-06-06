@@ -263,7 +263,7 @@ function displayAllContacts(){
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
 			response_object = JSON.parse(this.responseText);
-			console.log("The parsed object is " + response_object.results[0]);
+			console.log("The parsed object is " + response_object.results[1]);
 			displayTable(response_object.results);
 		}
 	};
@@ -271,21 +271,23 @@ function displayAllContacts(){
 
 
 function displayTable(contact_table_contents){
-
+	//0					 1				2			3			 4			5
 	//contactID, ownerID, name, email, phone, address
 	var number_of_contacts = contact_table_contents.length;
 
 	var i;
 	var rows = document.querySelectorAll(".blankRow");
-	var categories = rows[1].children;
-	rows[1].classList.remove("blankRow");
+	var categories = rows[0].children;
+	var name = contact_table_elements[1][2].split(" ");
+	rows[0].classList.remove("blankRow");
 
-	rows[1].setAttribute("id", contact_table_contents[0][0]);
+	rows[0].setAttribute("id", contact_table_contents[1][0]);
 
-	categories[0].innerHTML = contact_table_contents[0][1];
-	categories[1].innerHTML = contact_table_contents[0][2];
-	categories[2].innerHTML = contact_table_contents[0][3];
-	categories[3].innerHTML = contact_table_contents[0][4];
+	categories[0].innerHTML = name[1];
+	categories[1].innerHTML = name[0];
+	categories[2].innerHTML = contact_table_contents[1][3];
+	categories[3].innerHTML = contact_table_contents[1][4];
+	categories[4].innerHTML = contact_table_contents[1][5];
 
 
 	/*
