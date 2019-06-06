@@ -13,8 +13,8 @@ function doLogin()
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", 'application/json; charset=UTF-8');
-	try
-	{
+	//try
+	//{
 		xhr.send(jsonPayload);
 		//xhr.onreadystatechange = function() 
 		xhr.onload = function()
@@ -43,10 +43,10 @@ function doLogin()
         //var test = JSON.parse(xhr.response);
         //alert("we parsed");
 		
-	}
+	}//
 	
-	catch(err)
-	{
-		alert(err.message);
-	}
-}
+//	catch(err)
+//	{
+//		alert(err.message);
+//	}
+//}
