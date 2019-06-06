@@ -9,7 +9,6 @@ function doLogin()
 
 	var url = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/login.php';
 
-	alert("Javascript");
 	var xhr = new XMLHttpRequest();
 	//xhr.open("POST", url, true);
 	//xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -17,7 +16,7 @@ function doLogin()
 	xhr.onreadystatechange = function()
 		{
 
-
+		alert("test");
 		    // Complete
 			if (xhr.readyState == 4 && xhr.status == 200)
 			{
