@@ -42,13 +42,12 @@ $contact_id = $input["contact_id"];
 	// );
 
 	$conn = new mysqli("localhost", "root", "root", "mysql");
-	echo "Hello!";
 	
-	// if ($conn->connect_error) 
-	// {
-		// // echo "Hello2";
-		// returnWithError( $conn->connect_error );
-	// } 
+	if ($conn->connect_error) 
+	{
+		// echo "Hello2";
+		returnWithError( $conn->connect_error );
+	}
 	// else
 	// {
 		// // echo "Hello3";
