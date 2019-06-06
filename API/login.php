@@ -8,6 +8,7 @@
 
 		$usernameEntry = $obj["username"];
 		$passwordEntry = $obj["password"];
+    echo('username');
 
 		$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 
@@ -25,7 +26,6 @@
 
 			$stmt->execute();
 
-			// TODO: add user_id to results
 			$stmt->bind_result($usernameDB, $passwordDB);
 			$stmt->store_result();
 
@@ -68,7 +68,6 @@
         			    $response->psw= $passwordDB;
         			    $response->state = 3;
         			    echo json_encode($response);
-									// echo $response;
 					}
 				}
 			}
