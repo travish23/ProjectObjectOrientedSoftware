@@ -51,14 +51,14 @@
 	function sendError($error)
 	{
 		// returnJson('{"user_id":"", "error":"' . $error . '"}');
-		returnJson(0);
+		returnJson("0");
 	}
 
 	// format a json to return searchResults
 	function sendInfo($searchResults)
 	{
 		// returnJson('{"user_id":"' . $searchResults . '", "error":"0"}');
-		returnJson(1);
+		returnJson("1");
 	}
 
 ?>
