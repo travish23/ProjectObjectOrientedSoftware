@@ -11,12 +11,10 @@ function doLogin()
 	
 	alert("Javascript");
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET", url, true);
-	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-	try
-	{
-		xhr.send(jsonPayload);
-		xhr.onreadystatechange = function() 
+	xhr.open("POST", url, true);
+	//xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	//xhr.send(jsonPayload);
+	xhr.onreadystatechange = function() 
 		{
 			
 		
@@ -36,15 +34,11 @@ function doLogin()
 				    alert("Incorrect Username or Password");
 				}
 			}
-		};
+		}
+		xhr.open("POST", url, true);
+		xhr.send(jsonPayload);
 		//alert(test);
         //alert("after payload");
         //var test = JSON.parse(xhr.response);
         //alert("we parsed");
-		
-	}//
-		catch(err)
-	{
-	alert(err.message);
-	}
 }
