@@ -164,6 +164,8 @@ function sendDeleteRequest(){
 	//TODO: figure out how to get contact ID from table
 	var contactId = document.querySelector(".selected").id;
 
+	console.log("contact id: " + contactId + " (" + typeof(contactId) + ")");
+
 	var request_object = new XMLHttpRequest();
 	var url = urlBase + '/searchNames.' + extension;
 
