@@ -249,7 +249,7 @@ function displayAllContacts(){
 	request_object.onreadystatechange = function() {
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
-			console.log("response: " + request_object);
+			console.log("response: " + request_object.responseText);
 			response_object = JSON.parse(this.responseText);
 			displayTable(response_object.results);
 			return;
