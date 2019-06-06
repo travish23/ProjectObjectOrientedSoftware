@@ -21,6 +21,7 @@ function doLogin()
 	var password = document.getElementById("loginPass").value;
 	
 	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
+	console.log(username);
 	
 	var url = 'http://contactmanager.site/ProjectOjectOrientedSoftware/API/login.php';
 	//alert("Javascript");
