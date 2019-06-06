@@ -40,6 +40,8 @@ function doLogin()
 				
 				// Passwords matched
 				if(json.state == 1) {
+					
+					console.log("test");
 				    window.location.href = 'http://contactmanager.site/ProjectOjectOrientedSoftware/API/contactmanager.php';
 				}
 				else{
