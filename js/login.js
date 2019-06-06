@@ -31,6 +31,8 @@ function sendUsernameAndPassword(){
 	request_object.send(json_payload);
 
 	//creates an object to get information back
+	console.log("request_object.responseText = " + request_object.responseText);
+	
 	var response_object = JSON.parse(request_object.responseText);
 
 	console.log("The response object is " + request_object.responseText);
