@@ -278,7 +278,7 @@ function displayTable(contact_table_contents){
 	var i;
 	var rows = document.querySelectorAll(".blankRow");
 	var categories = rows[0].children;
-	var name = contact_table_elements[1][2].split(" ");
+	var name = contact_table_contents[1][2].split(" ");
 	rows[0].classList.remove("blankRow");
 
 	rows[0].setAttribute("id", contact_table_contents[1][0]);
