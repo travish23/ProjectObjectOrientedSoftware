@@ -275,7 +275,9 @@ function displayAllContacts(){
 
 
 
-	//var response_object = JSON.parse(request_object.responseText);
+	var response_array = JSON.parse(request_object.responseText);
+
+	console.log(response_array);
 
 	displayTable(response_object.searchResults);
 }
