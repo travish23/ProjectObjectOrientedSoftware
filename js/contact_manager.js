@@ -277,6 +277,7 @@ function clearTable()
 		if(!table.rows[i].id == "firstRow")
 			table.deleteRow(i);
 	}
+	console.log(table.rows[i].id);
 
 	// for (var i = 1; i <= 14; i++)
 	// {
