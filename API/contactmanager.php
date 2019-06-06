@@ -28,7 +28,7 @@
 	<head>
 		<title>Contacts</title>
 
-		<link rel="stylesheet" type="text/css" href="css/userContactsPage.css">
+		<link rel="stylesheet" type="text/css" href="../HTML/css/userContactsPage.css">
 		<script type="text/javascript" src="../js/userContactsPage.js" defer></script>
 		<script type="text/javascript" src="../js/contact_manager.js"></script>
 
