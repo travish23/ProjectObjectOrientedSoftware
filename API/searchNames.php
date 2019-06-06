@@ -9,9 +9,6 @@
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
-	echo "input is ";
-	echo file_get_contents('php://input');
-	
 	// parse input data
 	$userID = $input["ID"];
 	$searchQuery = $input["search"];
@@ -79,6 +76,6 @@
 	// format a json to return searchResults
 	function sendInfo($searchResults)
 	{
-		returnJson('{"results":[' . json_encode($searchResults) . '], "error":""}');
+		returnJson('{"results":' . json_encode($searchResults) . ', "error":""}');
 	}
 ?>
