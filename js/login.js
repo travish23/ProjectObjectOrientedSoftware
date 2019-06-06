@@ -36,8 +36,9 @@ function doLogin()
 		    // Complete
 			if (xhr.readyState == 4 && xhr.status == 200) 
 			{
-                var json = JSON.parse(xhr.response);
-				
+               			 var json = JSON.parse(xhr.response);
+				console.log("parsing");
+				alert(test);
 				// Passwords matched
 				if(json.state == 1) {
 					
