@@ -230,18 +230,8 @@ function sendSearchRequest(){
 
 	//sends a request with
 	request_object.send(json_payload);
-	var response_object;
 
-	request_object.onreadystatechange = function() {
-		console.log("(1)The response_object is " + this.responseText);
-
-		response_object = JSON.parse(this.responseText);
-		//document.getElementById("demo").innerHTML = myArr[0]
-
-	}
-
-
-	console.log("(2)The response object is " + response_object);
+	console.log("The response object is " + request_object.response)
 
 	//TODO: Display results of the search
 
@@ -283,7 +273,7 @@ function displayAllContacts(){
 
 	request_object.send(json_payload);
 
-	//console.log("The response_object is " + request_object.responseText);
+	console.log("The response_object is " + request_object.responseText);
 	//var response_object = JSON.parse(request_object.responseText);
 
 	displayTable(response_object.searchResults);
