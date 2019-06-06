@@ -43,52 +43,52 @@ $contact_id = $input["contact_id"];
 
 	$conn = new mysqli("localhost", "root", "root", "mysql");
 	
-	if ($conn->connect_error) 
-	{
-		echo "Hello2";
-		returnWithError( $conn->connect_error );
-	}
+	// if ($conn->connect_error) 
+	// {
+		// echo "Hello2";
+		// returnWithError( $conn->connect_error );
+	// }
 	
 	echo "hi";
-	// else
-	// {
-		// // echo "Hello3";
-		// // $sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
+	else
+	{
+		// echo "Hello3";
+		// $sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
 
-		// $sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
+		$sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
 		
-		// echo "sql is";
-		// echo $sql;
+		echo "sql is";
+		echo $sql;
 		
-		// $result = $conn->query($sql)
+		$result = $conn->query($sql)
 		
-		// // if(  != TRUE )
-		// // {
-			// // returnWithError( $conn->error );
-		// // }
+		// if(  != TRUE )
+		// {
+			// returnWithError( $conn->error );
+		// }
 		
-		// echo "result is";
-		// echo $result;
-		// $conn->close();
-	// }
+		echo "result is";
+		echo $result;
+		$conn->close();
+	}
 	
-	// returnWithError("");
+	returnWithError("");
 	
-	// function getRequestInfo()
-	// {
-		// // return json_decode(file_get_contents('php://input'), true);
-	// }
+	function getRequestInfo()
+	{
+		// return json_decode(file_get_contents('php://input'), true);
+	}
 
-	// function sendResultInfoAsJson( $obj )
-	// {
-		// header('Content-type: application/json');
-		// // echo $obj;
-	// }
+	function sendResultInfoAsJson( $obj )
+	{
+		header('Content-type: application/json');
+		// echo $obj;
+	}
 	
-	// function returnWithError( $err )
-	// {
-		// $retValue = '{"error":"' . $err . '"}';
-		// sendResultInfoAsJson( $retValue );
-	// }
+	function returnWithError( $err )
+	{
+		$retValue = '{"error":"' . $err . '"}';
+		sendResultInfoAsJson( $retValue );
+	}
 
 ?>
