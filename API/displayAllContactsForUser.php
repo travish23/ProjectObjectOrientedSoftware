@@ -7,8 +7,9 @@
 	
 	session_start();
 	
-	echo "_session[user_id is ";
+	echo "_session[user_id] is ";
 	echo $_SESSION["user_id"];
+	echo "\n";
 	
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
@@ -16,6 +17,8 @@
 	// parse input data
 	$userID = $input["ID"];
 
+	echo "php recieved ";
+	echo $userID;
 
 	// initialize result variables
 	$searchResults = array();
