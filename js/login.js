@@ -33,6 +33,7 @@ function doLogin()
 		xhr.send(jsonPayload);
 		xhr.onreadystatechange = function() 
 		{
+			console.log(xhr.readState);
 		    // Complete
 			if (xhr.readyState == 4 && xhr.status == 200) 
 			{
