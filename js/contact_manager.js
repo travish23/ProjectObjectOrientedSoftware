@@ -113,15 +113,15 @@ function sendAddContactRequest(){
 	console.log("Got into sendAddContactRequest()");
 
 	// gets the contact information given by user and stores them in variables.
-	var first_name = getElementById("firstName").value;
-	var last_name = getElementById("lastName").value;
-	var phone_number = getElementById("phone").value;
-	var email = getElementById("email").value;
+	var first_name = document.getElementById("firstName").value;
+	var last_name = document.getElementById("lastName").value;
+	var phone_number = document.getElementById("phone").value;
+	var email = document.getElementById("email").value;
 
-	var street = getElementById("street").value;
-	var city = getElementById("city").value;
-	var state = getElementById("state").value;
-	var zip = getElementById("zip").value;
+	var street = document.getElementById("street").value;
+	var city = document.getElementById("city").value;
+	var state = document.getElementById("state").value;
+	var zip = document.getElementById("zip").value;
 
 	var name = first_name + " " + last_name;
 	var address = street + " " + city + "," + state + " " + zip;
