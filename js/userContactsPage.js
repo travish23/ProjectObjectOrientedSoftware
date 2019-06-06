@@ -68,6 +68,11 @@ function cancelEditContact()
 	document.querySelector("#contactTable").removeEventListener("click", allowEditSelection);
 }
 
+function cancelSearch()
+{
+	document.getElementById("search").value = "";
+}
+
 function allowSelection(event)
 {
 	const row = event.target.parentNode;
