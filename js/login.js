@@ -22,7 +22,7 @@ function doLogin()
 	
 	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 	
-	var url = 'http://contactmanager.site/ProjectOjectOrientedSoftware/login.php';
+	var url = 'http://contactmanager.site/ProjectOjectOrientedSoftware/API/login.php';
 	//alert("Javascript");
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -39,7 +39,7 @@ function doLogin()
 				
 				// Passwords matched
 				if(json.state == 1) {
-				    window.location.href = 'http://contactmanager.site/ProjectOjectOrientedSoftware/contactmanager.php';
+				    window.location.href = 'http://contactmanager.site/ProjectOjectOrientedSoftware/API/contactmanager.php';
 				}
 				else{
 				    alert("Incorrect Username or Password");
