@@ -45,7 +45,7 @@ $address = $inData["address"];
 		//echo "Hello3";
 		//$sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
 		$sql = "INSERT INTO Contacts (user_id, name , phone, email, address) 
-			VALUES (" . $user_id . ",'" . $name . "','" . $phone . "','" . $email . "''" . $address . "')";
+			VALUES ('1','" . $name . "','" . $phone . "','" . $email . "''" . $address . "')";
 		
 		//if ($mode == "delete")
 		//{

@@ -24,7 +24,7 @@ $contact_id = $input["contact_id"];
 
 	echo "hi";
 	
-	$conn = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
+	$conn = new mysqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	
 	
 	// $user = 'root';
