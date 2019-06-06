@@ -24,7 +24,7 @@ function doLogin()
 				console.log("json.error = "  + json.error + " (" + typeof(json.error) + ")");
 				console.log("json.user_id = "  + json.user_id + " (" + typeof(json.user_id) + ")");
 				// Passwords matched
-				if(json.error == 0) {
+				if(json.error == "0") {
 
 					console.log("test");
 				  window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
