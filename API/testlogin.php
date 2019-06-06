@@ -10,6 +10,8 @@
 	// collect input data
 	$input = json_decode(file_get_contents('php://input'), true);
 	
+	echo $input;
+	
 	// parse input data
 	$username = $input["username"];
 	$password = $input["psw"];
