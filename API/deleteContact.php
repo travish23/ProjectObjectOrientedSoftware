@@ -6,15 +6,17 @@
 $inData = getRequestInfo();
 
 //$mode = $inData["mode"];
-$name = $inData["name"];
-$phone = $inData["phone"];
-$email = $inData["email"];
-$address = $inData["address"];
-$contact_id = $inData["contact_id"];
+// $name = $inData["name"];
+// $phone = $inData["phone"];
+// $email = $inData["email"];
+// $address = $inData["address"];
+// $contact_id = $inData["contact_id"];
 //$self = $_SERVER['PHP_SELF'];
 
 	//$color = $inData["color"];
-	$userId = $inData["ID"];
+	// $userId = $inData["ID"];
+
+
 
 	$conn = new sqli("localhost", "luua4y2c74pm", "@Contact4331", "Cop4331Project1");
 	//$user = 'root';
@@ -46,12 +48,15 @@ $contact_id = $inData["contact_id"];
 		//echo "Hello3";
 		//$sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
 
-		$sql = "delete * from Contacts WHERE contact_id='" . $contact_id . "'";
+		$sql = "delete * from Contacts WHERE contact_id='" . $inData . "'";
 		
-		if( $result = $conn->query($sql) != TRUE )
-		{
-			returnWithError( $conn->error );
-		}
+		echo "recieved id is ";
+		echo $inData;
+		
+		// if( $result = $conn->query($sql) != TRUE )
+		// {
+			// returnWithError( $conn->error );
+		// }
 		$conn->close();
 	}
 	
