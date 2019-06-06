@@ -173,7 +173,7 @@ function sendDeleteRequest(){
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
 			console.log("The object is " + request_object.responseText);
-			displayTable(response_object.results);
+			displayAllContacts();
 			return;
 		}
 	};
