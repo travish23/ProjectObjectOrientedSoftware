@@ -233,6 +233,16 @@ function sendSearchRequest(){
 
 	request_object.onreadystatechange = function() {
 		console.log("(2)The response_object is " + request_object.responseText);
+		if(request_object.readyState === 0)
+			console.log("state = 0");
+		if(request_object.readyState === 1)
+			console.log("state = 1");
+		if(request_object.readyState === 2)
+			console.log("state = 2");
+		if(request_object.readyState === 3)
+			console.log("state = 3");
+		if(request_object.readyState === 4)
+			console.log("state = 4");
 
 		if(request_object.readyState === 4 && request_object.status === 200)
 		{
@@ -242,7 +252,9 @@ function sendSearchRequest(){
 			return;
 		}
 	};
+	console.log("01");
 	request_object.open("POST", url);
+	console.log("02");
 	request_object.send(json_payload);
 
 	//TODO: Display results of the search
