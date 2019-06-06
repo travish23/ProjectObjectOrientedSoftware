@@ -8,7 +8,7 @@ var current_user_ID = 0;
 
 //TODO: Create a display function to display the 2D arrays given as a table of contacts
 // and use that function where needed
-
+/*
 //sends the username and password to the server for login
 function sendUsernameAndPassword(){
 
@@ -58,6 +58,7 @@ function sendUsernameAndPassword(){
 
 	}
 }
+*/
 
 //sends request to create new account with username and password. Displays failure or success
 function sendCreateNewAccountRequest(){
