@@ -164,10 +164,11 @@ function sendDeleteRequest(){
 	//TODO: figure out how to get contact ID from table
 	var contactId = document.querySelector(".selected").id;
 
+	//converts that object into  JSON object
 	console.log("contact id: " + contactId + " (" + typeof(contactId) + ")");
 
 	var request_object = new XMLHttpRequest();
-	var url = urlBase + '/searchNames.' + extension;
+	var url = urlBase + '/deleteContact.' + extension;
 
 	request_object.onreadystatechange = function() {
 		console.log("(2)The response_object is " + request_object.responseText);
