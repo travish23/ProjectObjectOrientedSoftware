@@ -271,31 +271,47 @@ function displayAllContacts(){
 
 
 function displayTable(contact_table_contents){
+
 	//0					 1				2			3			 4			5
 	//contactID, ownerID, name, email, phone, address
-	var number_of_contacts = contact_table_contents.length;
 
+	var number_of_contacts = contact_table_contents.length;
 	var i;
 	var rows = document.querySelectorAll(".blankRow");
-	var categories = rows[0].children;
-	var name = contact_table_elements[1][2].split(" ");
-	rows[0].classList.remove("blankRow");
+	var table = document.getElementById("contactTable");
 
-	rows[0].setAttribute("id", contact_table_contents[1][0]);
+	for(i = 0; i < rows.length; i++){
 
-	categories[0].innerHTML = name[1];
-	categories[1].innerHTML = name[0];
-	categories[2].innerHTML = contact_table_contents[1][3];
-	categories[3].innerHTML = contact_table_contents[1][4];
-	categories[4].innerHTML = contact_table_contents[1][5];
+		var categories = rows[i].children;
+		var name = contact_table_contents[i][2].split(" ");
 
+		rows[i].classList.remove("blankRow");
+		rows[i].setAttribute("id", contact_table_contents[i][0]);
 
-	/*
-	for(i = 0; i < number_of_contacts; i++){
-
-
-
+		categories[0].innerHTML = name[1];
+		categories[1].innerHTML = name[0];
+		categories[2].innerHTML = contact_table_contents[i][3];
+		categories[3].innerHTML = contact_table_contents[i][4];
+		categories[4].innerHTML = contact_table_contents[i][5];
 	}
-	*/
+
+	while(i < number_of_contacts)
+	{
+		var row = table.insertRow(i);
+		row.setAttribute("id", contact_table_contents[i][0]);
+
+		var cell0 = row.insertCell(0);
+		var cell1 = row.insertCell(1);
+		var cell2 = row.insertCell(2);
+		var cell3 = row.insertCell(3);
+		var cell4 = row.insertCell(4);
+
+		cell0.innerHTML = name[1];
+		cell1.innerHTML = name[0];
+		cell2.innerHTML = contact_table_contents[i][3];
+		cell3.innerHTML = contact_table_contents[i][4];
+		cell4.innerHTML = contact_table_contents[i][5];
+		i++;
+	}
 
 }

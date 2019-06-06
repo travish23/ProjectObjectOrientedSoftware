@@ -1,5 +1,3 @@
-
-// Called when submit button on login page is hit
 function sendUsernameAndPassword(){
 
 	console.log("Got into sendUsernameAndPassword()");
