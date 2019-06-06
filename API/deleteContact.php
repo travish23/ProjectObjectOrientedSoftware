@@ -8,6 +8,8 @@
 
 $input = json_decode(file_get_contents('php://input'), true);
 
+var_dump($input);
+
 $contact_id = $input["contact_id"];
 
 
