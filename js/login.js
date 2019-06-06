@@ -8,7 +8,8 @@ function doLogin()
 	var jsonPayload = '{"username" : "' + username + '", "password" : "' + password + '"}';
 
 	var url = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/login.php';
-	//alert("Javascript");
+	
+	alert("Javascript");
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
 	xhr.setRequestHeader("Content-type", 'application/json; charset=UTF-8');
@@ -17,13 +18,14 @@ function doLogin()
 		xhr.send(jsonPayload);
 		xhr.onreadystatechange = function() 
 		{
-			console.log(xhr.readState);
+			alert(test);
+		
 		    // Complete
 			if (xhr.readyState == 4 && xhr.status == 200) 
 			{
                			 var json = JSON.parse(xhr.response);
-				console.log("parsing");
-				alert(test);
+				
+			
 				// Passwords matched
 				if(json.state == 1) {
 					
