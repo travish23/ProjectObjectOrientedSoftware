@@ -11,7 +11,7 @@ function doLogin()
 	
 	alert("Javascript");
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", url, true);
+	xhr.open("GET", url, true);
 	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
 	try
 	{
