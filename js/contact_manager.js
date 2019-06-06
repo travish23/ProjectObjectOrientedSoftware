@@ -272,12 +272,13 @@ function displayAllContacts(){
 function clearTable()
 {
 	var table = document.getElementById("contactTable");
+	var length = table.rows.length;
 	console.log(table.rows.length);
-	for (var i = 0; i < table.rows.length; i++)
+	for (var i = 0; i < length; i++)
 	{
 		console.log(table.rows[i].id);
 		if(!table.rows[i].id == "firstRow")
-			table.deleteRow(i);
+			table.removeChild(i);
 	}
 	console.log("after" + table.rows.length);
 
