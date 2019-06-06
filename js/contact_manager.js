@@ -32,8 +32,15 @@ function doLogin()
 
 					current_user_ID = json.user_id;
 					console.log("id: " + current_user_ID + " (" + typeof(current_user_ID) + ")");
-					console.log("hello1");
-				  window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
+
+					var http = new XMLHttpRequest();
+					var url2 = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
+					http.onreadystatechange = function()
+					{
+						window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/API/contactmanager.php';
+					}
+					http.open("POST", url2, true);
+					http.send(json.user_id);
 				}
 				else{
 				    alert("Incorrect Username or Password");

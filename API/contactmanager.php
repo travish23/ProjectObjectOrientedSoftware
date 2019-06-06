@@ -1,7 +1,9 @@
 <?php
     include("config.php");
     session_start();
-    $user_check = $_SESSION['login_user'];
+    $input = file_get_contents('php://input');
+    $_SESSION['user_id'] = $input;
+
     if(!isset($_SESSION['login_user']))
     {
         header("location: ../HTML/userContactsPage.html");
