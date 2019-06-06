@@ -29,6 +29,7 @@ function doLogin()
 				// Passwords matched
 				if(json.error == "0") {
 					current_user_ID = json.user_id;
+					console.log("id: " + current_user_ID + " (" + typeof(current_user_ID) + ")");
 				  window.location.href = 'http://contactmanager.site/ProjectObjectOrientedSoftware/HTML/userContactsPage.html';
 				}
 				else{
