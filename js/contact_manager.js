@@ -227,11 +227,9 @@ function sendSearchRequest(){
 	//Sets that object to send stuff to the searchNames.php file
 	var url = urlBase + '/searchNames.' + extension;
 	request_object.open("POST", url);
-
-	//sends a request with
 	request_object.send(json_payload);
 
-	console.log("The response object is " + request_object.responseText);
+	console.log("(1)The response object is " + request_object.responseText);
 
 	var response_object;
 
@@ -243,6 +241,7 @@ function sendSearchRequest(){
 			response_object = JSON.parse(this.responseText);
 			console.log("The parsed object is " + response_object.results[1]);
 			displayTable(response_object.results);
+			return;
 		}
 	};
 
@@ -272,6 +271,7 @@ function displayAllContacts(){
 		{
 			response_object = JSON.parse(this.responseText);
 			displayTable(response_object.results);
+			return;
 		}
 	};
 }
