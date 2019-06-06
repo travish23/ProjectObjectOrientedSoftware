@@ -58,7 +58,8 @@ $contact_id = $input["contact_id"];
 		// echo "Hello3";
 		// $sql = "insert into Contacts (contact_id,name) VALUES (" . $contact_id . ",'" . $name . "')";
 
-		$sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
+		//$sql = "select * from Contacts WHERE contact_id='" . $contact_id . "'";
+		$sql = "delete from Contacts WHERE contact_id='" . $contact_id . "'";
 		
 		echo "sql is";
 		echo $sql;
